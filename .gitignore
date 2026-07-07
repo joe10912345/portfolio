@@ -3,3 +3,7 @@ desktop.ini
 .DS_Store
 .claude/
 DO_NOT_EDIT_HERE.txt
+
+# 工作室檔案，只留在 Google Drive，不上 GitHub
+content/
+文案/

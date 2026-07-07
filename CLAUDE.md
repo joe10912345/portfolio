@@ -28,9 +28,25 @@ A personal industrial-design portfolio for Joel Chang. Currently one self-contai
 
 ## Status (2026-07-07)
 - **Site is fully Wix-independent** — zero references to wixstatic / joel-chang-design.com remain.
-- Version A is live on GitHub Pages; B + subpages not yet uploaded.
-- Images are unoptimized originals (297MB) — compress to WebP before/after upload (next step).
+- **Full site is live** on GitHub Pages: homepage A + 6 category pages + 22 project pages + assets,
+  at https://joe10912345.github.io/portfolio/.
+- Images are unoptimized originals (~296MB) — compress to WebP later if load speed matters (Joel declined for now).
 - Old Wix site + domain untouched.
+
+## 維護架構 (set up 2026-07-07) — READ THIS
+Three places, each with one job:
+- **Working folder (edit here):** `G:\我的雲端硬碟\Web` — the Google-Drive-synced copy. Joel edits ONLY here; it syncs across his computers. This is his private workshop.
+- **Publish bridge (never hand-edit):** `C:\Users\joe10\Desktop\Web` — the git repo. `.git` must stay OUT of Drive (Drive sync corrupts it), so the bridge lives on the desktop. A `DO_NOT_EDIT_HERE.txt` marker sits in it.
+- **Live site:** GitHub `joe10912345/portfolio` → GitHub Pages.
+
+**Publish flow (when Joel says "幫我上線"):**
+1. `robocopy "G:\我的雲端硬碟\Web" "C:\Users\joe10\Desktop\Web" /MIR /XD ".git" ".claude" "content" "文案" /XF "desktop.ini" "Thumbs.db" "DO_NOT_EDIT_HERE.txt"` — sync Drive → bridge.
+2. In the bridge: `git add -A && git commit && git push origin main`.
+3. Pages rebuilds in ~1–2 min.
+
+**GitHub holds the storefront only:** all `*.html` + `assets/` + the `*.md` docs. The workshop
+files `content/` and `文案/` are **Drive-only** (git-ignored + excluded from the publish sync) — they
+never go to GitHub. Edit copy in Drive `文案/`, then sync into the HTML (still requires a sync pass).
 
 ## Owner / working style
 - Joel is a designer, not a developer. He designs layouts in **Figma** and wants to deploy via **GitHub**.
@@ -68,10 +84,10 @@ may not resolve as-is — verify with `npx skills` / the repo's `skills/` folder
 there: `soft-skill` (expensive soft UI), `gpt-taste` (Awwwards-level + GSAP motion).
 
 ## Next steps (suggested order)
-1. Joel decides between homepage A and B (or a merge); upload the full folder to GitHub Pages
-   (all *.html + assets/; `content/` and `文案/` optional) so the live site gains all subpages.
-2. Image optimization pass if load speed becomes an issue (Joel declined for now — originals ship as-is).
-3. Point the custom domain `joel-chang-design.com` at GitHub Pages only after the new site is approved.
+1. ~~Upload full site to GitHub Pages~~ — DONE (2026-07-07). Full site is live.
+2. Joel to decide between homepage A and B (or a merge) — `index-b.html` is the alternate, still shipped but not linked.
+3. Image optimization pass if load speed becomes an issue (Joel declined for now — originals ship as-is).
+4. Point the custom domain `joel-chang-design.com` at GitHub Pages only after the new site is approved.
 
 ## Constraints
 - Must stay deployable to **GitHub Pages** (static hosting). If migrating to the taste-skill default
