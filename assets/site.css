@@ -68,12 +68,16 @@ img{max-width:100%;display:block;height:auto}
 
 /* ── 作品內文（文字 + 圖片流）─────────── */
 .flow{padding:10px 0 90px}
-.flow p{color:var(--muted);font-size:1.04rem;max-width:760px;margin:22px auto}
-.flow .stack{max-width:760px;margin:26px auto 6px}
+.flow p{color:var(--muted);font-size:1.04rem;max-width:760px;margin:22px 0}
+.flow .stack{max-width:760px;margin:26px 0 6px}
 .flow .stack div{color:var(--text);font-weight:500}
 .flow .stack div:first-child{font-family:"IBM Plex Mono",monospace;font-size:.74rem;
   letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
-.flow h2{font-size:clamp(1.5rem,3.4vw,2.2rem);max-width:760px;margin:54px auto 8px}
+/* 中間標題：白色、比內文大、用標題字體 */
+.flow .stack div:not(:first-child){font-family:"Clash Display","Noto Sans TC",system-ui,sans-serif;
+  color:var(--text);font-size:clamp(1.25rem,2.6vw,1.6rem);font-weight:600;
+  line-height:1.15;letter-spacing:-.01em}
+.flow h2{font-size:clamp(1.5rem,3.4vw,2.2rem);max-width:760px;margin:54px 0 8px}
 .flow figure{margin:26px auto;max-width:1080px;background:var(--tray);border:1px solid var(--hair);
   border-radius:var(--r-out);padding:6px}
 .flow figure img{border-radius:var(--r-in);width:100%}
