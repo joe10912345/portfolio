@@ -40,7 +40,11 @@ Three places, each with one job:
 - **Live site:** GitHub `joe10912345/portfolio` → GitHub Pages.
 
 **Publish flow (when Joel says "幫我上線"):**
-1. `robocopy "G:\我的雲端硬碟\Web" "C:\Users\joe10\Desktop\Web" /MIR /XD ".git" ".claude" "content" "文案" /XF "desktop.ini" "Thumbs.db" "DO_NOT_EDIT_HERE.txt"` — sync Drive → bridge.
+1. `robocopy "G:\我的雲端硬碟\Web" "C:\Users\joe10\Desktop\Web" /E /XD ".git" ".claude" "content" "文案" /XF "desktop.ini" "Thumbs.db" "DO_NOT_EDIT_HERE.txt"` — sync Drive → bridge.
+   ⚠️ Use `/E` (copy, non-destructive), NOT `/MIR`. Google Drive streams files on demand, so a file that
+   hasn't downloaded locally looks "absent" to robocopy; `/MIR`'s purge then DELETES the good bridge copy
+   (this happened 2026-07-08, deleting 3 about-page images — recovered from git). `/E` never deletes.
+   If Joel genuinely deletes a file in Drive, remove it from the bridge explicitly (`git rm`) — don't rely on purge.
 2. In the bridge: `git add -A && git commit && git push origin main`.
 3. Pages rebuilds in ~1–2 min.
 
