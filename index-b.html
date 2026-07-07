@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content="#050506" />
+
+<!-- ============================================================
+     分頁標題（瀏覽器分頁上顯示的字）
+============================================================ -->
+<title>Joel Chang — Industrial Designer</title>
+<meta name="description" content="Industrial designer Joel Chang. Designing memorable products through clarity, crafted aesthetics, and manufacturable beauty." />
+
+<!-- 分享預覽（Open Graph / Twitter） -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Joel Chang — Industrial Designer" />
+<meta property="og:description" content="Designing memorable experiences through clarity, crafted aesthetics, and manufacturable beauty." />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- ============================================================
+     字型 —— B 版用高階字體（有網路時自動載入）
+       · Clash Display  → 標題（Fontshare）
+       · Plus Jakarta Sans → 內文（Google Fonts）
+       · IBM Plex Mono → 技術標籤 / 數字（Google Fonts）
+============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   1. 主題設定 —— 想換顏色，只改這裡
+      整站只用「單一點綴色」= 你的品牌電光藍
+============================================================ */
+:root{
+  --bg:        #050506;                 /* 最深 OLED 黑 */
+  --bg-2:      #0a0a0d;
+  --tray:      rgba(255,255,255,.045);  /* 雙層邊框：外層「鋁托盤」 */
+  --core:      #0e0e12;                 /* 雙層邊框：內層「玻璃」 */
+  --core-2:    #131318;
+  --text:      #f5f5f7;                 /* 主要文字 */
+  --muted:     #9c9ca6;                 /* 次要文字（灰）*/
+  --faint:     #63636d;                 /* 更淡的說明字 */
+  --accent:    #00A3FF;                 /* 主題點綴色（電光藍）← 換成你喜歡的顏色 */
+  --accent-ink:#0a0a0c;                 /* 點綴色上的深字 */
+  --hair:      rgba(255,255,255,.08);   /* 髮絲線 */
+  --hair-2:    rgba(255,255,255,.14);
+  --glass:     rgba(12,12,16,.62);      /* 玻璃導覽列底 */
+
+  --r-out:     30px;                    /* 外層圓角 */
+  --r-in:      24px;                    /* 內層圓角（比外層小 6px = padding）*/
+  --max:       1220px;
+
+  /* 高階緩動曲線（有物理重量感，非 linear/ease）*/
+  --ease:      cubic-bezier(.22,.68,0,1);
+  --ease-out:  cubic-bezier(.16,1,.3,1);
+}
+
+/* ============================================================
+   2. 基本重設
+============================================================ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);
+  font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,-apple-system,"Microsoft JhengHei",sans-serif;
+  line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,.display{font-family:"Clash Display","Noto Sans TC",system-ui,sans-serif;
+  letter-spacing:-.02em;line-height:1.02;font-weight:600;text-wrap:balance}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--accent);color:var(--accent-ink)}
+
+.wrap{width:min(90%,var(--max));margin-inline:auto}
+section{padding:clamp(90px,14vw,160px) 0;position:relative;z-index:2}
+
+/* 鍵盤操作可見焦點 */
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+a:focus:not(:focus-visible){outline:none}
+
+/* 技術微標籤（工程圖規格感）*/
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"IBM Plex Mono",monospace;
+  font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);
+  border:1px solid var(--hair);background:var(--tray);border-radius:100px;padding:7px 15px}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 12px var(--accent)}
+
+/* ============================================================
+   3. 背景質感層（固定、不吃效能）
+============================================================ */
+.mesh{position:fixed;inset:0;z-index:0;pointer-events:none;background-color:var(--bg);
+  background-image:
+    radial-gradient(55% 45% at 12% 8%, rgba(0,163,255,.11), transparent 62%),
+    radial-gradient(45% 40% at 88% 14%, rgba(255,255,255,.05), transparent 60%),
+    radial-gradient(60% 55% at 72% 108%, rgba(0,163,255,.07), transparent 55%)}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.glow{position:fixed;top:0;left:0;width:560px;height:560px;z-index:1;pointer-events:none;border-radius:50%;
+  transform:translate(-50%,-50%);opacity:0;transition:opacity .4s var(--ease);will-change:transform;
+  background:radial-gradient(circle,rgba(0,163,255,.16),transparent 62%)}
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;transform:scaleX(0);transform-origin:0 50%;
+  z-index:200;background:linear-gradient(90deg,var(--accent),transparent);will-change:transform}
+
+/* ============================================================
+   4. 島型導覽列（浮動玻璃膠囊）
+============================================================ */
+header{position:fixed;top:0;left:0;width:100%;z-index:120;display:flex;justify-content:center;
+  padding:22px 16px;pointer-events:none;transition:transform .5s var(--ease)}
+header.hidden{transform:translateY(-130%)}   /* 下捲時整個島藏到畫面外 */
+.nav-island{pointer-events:auto;display:flex;align-items:center;gap:34px;
+  background:var(--glass);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);
+  border:1px solid var(--hair);border-radius:100px;padding:13px 13px 13px 30px;
+  box-shadow:0 1px 0 rgba(255,255,255,.05) inset, 0 18px 50px -20px rgba(0,0,0,.7);
+  transition:gap .5s var(--ease),padding .5s var(--ease)}
+.nav-logo{font-family:"Clash Display",sans-serif;font-weight:600;font-size:1.02rem;letter-spacing:-.01em;
+  white-space:nowrap;display:flex;align-items:center}
+.nav-logo span{color:var(--accent)}
+.nav-logo img{height:24px;width:auto}
+.nav-links{display:flex;gap:32px;font-size:.95rem;font-weight:500}
+.nav-links a{color:var(--muted);position:relative;transition:color .3s var(--ease)}
+.nav-links a:hover{color:var(--text)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1.5px;background:var(--accent);
+  transition:width .35s var(--ease)}
+.nav-links a:hover::after{width:100%}
+/* 島內 CTA（膠囊 + 內嵌箭頭圈）*/
+.nav-cta{display:inline-flex;align-items:center;gap:12px;background:var(--accent);color:var(--accent-ink);
+  border-radius:100px;padding:11px 11px 11px 22px;font-weight:600;font-size:.92rem;white-space:nowrap;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.nav-cta .ic{width:30px;height:30px;border-radius:50%;background:rgba(10,10,12,.16);display:grid;place-items:center;
+  transition:transform .4s var(--ease)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 24px -8px rgba(0,163,255,.5)}
+.nav-cta:hover .ic{transform:translate(2px,-1px)}
+.nav-cta:active{transform:scale(.97)}
+/* 漢堡（會變形成 X）*/
+.burger{display:none;pointer-events:auto;width:44px;height:44px;border-radius:50%;border:1px solid var(--hair);
+  background:var(--tray);position:relative;cursor:pointer;flex:none}
+.burger span{position:absolute;left:12px;width:20px;height:1.6px;background:var(--text);border-radius:2px;
+  transition:transform .45s var(--ease),opacity .3s var(--ease)}
+.burger span:nth-child(1){top:17px}
+.burger span:nth-child(2){top:25px}
+body.menu-open .burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+body.menu-open .burger span:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+
+/* 全螢幕玻璃選單 */
+.overlay{position:fixed;inset:0;z-index:110;background:rgba(5,5,6,.8);
+  backdrop-filter:blur(26px) saturate(1.4);-webkit-backdrop-filter:blur(26px) saturate(1.4);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;
+  opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
+body.menu-open .overlay{opacity:1;visibility:visible}
+.overlay a{font-family:"Clash Display",sans-serif;font-size:clamp(2.2rem,9vw,4rem);font-weight:500;color:var(--text);
+  opacity:0;transform:translateY(40px);transition:transform .6s var(--ease-out),opacity .6s var(--ease-out),color .3s}
+.overlay a:hover{color:var(--accent)}
+body.menu-open .overlay a{opacity:1;transform:none}
+body.menu-open .overlay a:nth-child(1){transition-delay:.08s}
+body.menu-open .overlay a:nth-child(2){transition-delay:.14s}
+body.menu-open .overlay a:nth-child(3){transition-delay:.20s}
+body.menu-open .overlay a:nth-child(4){transition-delay:.26s}
+.overlay .om{margin-top:34px;font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.2em;
+  color:var(--faint);opacity:0;transition:opacity .5s .34s}
+body.menu-open .overlay .om{opacity:1}
+
+/* ============================================================
+   5. 通用按鈕（Button-in-Button：內嵌箭頭圈）
+============================================================ */
+.btn{display:inline-flex;align-items:center;gap:14px;border-radius:100px;font-weight:600;font-size:.95rem;
+  padding:12px 12px 12px 26px;cursor:pointer;border:1px solid transparent;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),background .4s var(--ease),color .4s var(--ease)}
+.btn .ic{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;flex:none;
+  transition:transform .45s var(--ease),background .4s var(--ease)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary .ic{background:rgba(10,10,12,.18)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -14px rgba(0,163,255,.55)}
+.btn-primary:hover .ic{transform:translate(3px,-2px) scale(1.05)}
+.btn-primary:active{transform:scale(.98)}
+.btn-ghost{background:var(--tray);color:var(--text);border-color:var(--hair)}
+.btn-ghost .ic{background:rgba(255,255,255,.06)}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--hair-2)}
+.btn-ghost:hover .ic{transform:translate(3px,-2px) scale(1.05)}
+.btn-ghost:active{transform:scale(.98)}
+
+/* ============================================================
+   6. 首頁 Hero
+============================================================ */
+.hero{min-height:88dvh;display:flex;align-items:center;padding-top:120px;position:relative}
+.hero-inner{max-width:960px}
+.hero h1{font-size:clamp(2.7rem,8.2vw,6.6rem);margin:26px 0}
+.hero h1 .stroke{-webkit-text-stroke:1.4px var(--text);color:transparent;font-weight:500}
+.hero h1 .accent{color:var(--accent)}
+.hero p{max-width:600px;color:var(--muted);font-size:clamp(1.02rem,2.1vw,1.22rem)}
+.hero-cta{display:flex;gap:14px;margin-top:42px;flex-wrap:wrap}
+.scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);color:var(--faint);
+  font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
+  display:flex;flex-direction:column;align-items:center;gap:12px}
+.scroll-cue .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:fall 1.8s var(--ease) infinite}
+@keyframes fall{0%{transform:translateY(-9px);opacity:0}40%{opacity:1}100%{transform:translateY(15px);opacity:0}}
+
+/* 專長跑馬燈 */
+.marquee{border-block:1px solid var(--hair);padding:26px 0;overflow:hidden;white-space:nowrap;
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);position:relative;z-index:2;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee-track{display:inline-flex;animation:scroll 32s linear infinite;font-family:"Clash Display",sans-serif;
+  font-size:1.35rem;font-weight:500;color:var(--muted);will-change:transform}
+.marquee-track span{display:inline-flex;align-items:center;padding:0 34px;gap:34px}
+.marquee-track span::after{content:"✳";color:var(--accent);font-size:.9rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* 滿版相片庫跑馬燈（首頁頂部） */
+.photo-marquee{overflow:hidden;width:100%;padding:20px 0;position:relative;z-index:2;
+  border-block:1px solid var(--hair)}
+.photo-track{display:flex;width:max-content;animation:scroll 48s linear infinite;will-change:transform}
+.photo-track img{height:min(48vw,400px);width:auto;object-fit:cover;border-radius:var(--r-in);margin-right:16px;
+  border:1px solid var(--hair)}
+.photo-marquee:hover .photo-track{animation-play-state:paused}
+
+/* Expertise 能力卡跑馬燈 */
+.skill-marquee{overflow:hidden;width:100%;margin-top:40px;position:relative;z-index:2}
+.skill-track{display:flex;width:max-content;animation:scroll 70s linear infinite;will-change:transform}
+.skill-track img{height:min(60vw,330px);width:auto;border-radius:var(--r-in);margin-right:16px;
+  border:1px solid var(--hair)}
+.skill-marquee:hover .skill-track{animation-play-state:paused}
+
+/* 客戶 logo 牆 */
+.clients{margin:70px auto 0;max-width:940px}
+.clients img{width:100%;height:auto;opacity:.9}
+
+/* ============================================================
+   7. 區塊標頭
+============================================================ */
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;
+  margin-bottom:56px;flex-wrap:wrap}
+.section-head h2{font-size:clamp(2.1rem,5.2vw,3.6rem);margin-top:18px}
+.section-head .sub{color:var(--muted);max-width:380px;font-size:1rem}
+.idx{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--faint);letter-spacing:.2em}
+
+/* ============================================================
+   8. 作品區 —— 不對稱 Bento + 雙層邊框卡片
+============================================================ */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+/* 外層「鋁托盤」 */
+.card{grid-column:span 4;background:var(--tray);border:1px solid var(--hair);border-radius:var(--r-out);
+  padding:6px;display:block;position:relative;overflow:hidden;
+  transition:transform .6s var(--ease),border-color .5s var(--ease),box-shadow .6s var(--ease)}
+.card:hover{transform:translateY(-6px);border-color:rgba(0,163,255,.35);
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.8), 0 0 0 1px rgba(0,163,255,.12)}
+.card.feature{grid-column:span 8;grid-row:span 2}
+.card.wide{grid-column:span 8}
+/* 內層「玻璃」 */
+.card-core{border-radius:var(--r-in);overflow:hidden;background:var(--core);height:100%;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.10);display:flex;flex-direction:column}
+.card-thumb{position:relative;overflow:hidden;flex:1 1 auto;min-height:190px;
+  background:linear-gradient(150deg,var(--core-2),var(--core))}
+.card.feature .card-thumb{min-height:360px}
+.card-thumb .fill{position:absolute;inset:0;opacity:.9}
+.card-thumb .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;
+  transition:transform .8s var(--ease),filter .6s var(--ease);filter:saturate(1.05)}
+.card:hover .photo{transform:scale(1.06)}
+.card-thumb::after{content:"";position:absolute;inset:0;z-index:2;
+  background:linear-gradient(180deg,transparent 40%,rgba(5,5,6,.55))}
+.card-num{position:absolute;top:16px;left:18px;z-index:3;font-family:"IBM Plex Mono",monospace;
+  font-size:.72rem;letter-spacing:.15em;color:var(--text);opacity:.85}
+.card-body{position:relative;z-index:3;padding:20px 22px 22px;display:flex;justify-content:space-between;
+  align-items:flex-end;gap:14px;margin-top:-58px}
+.card-body h3{font-size:1.4rem;font-weight:600}
+.card.feature .card-body h3{font-size:1.9rem}
+.card-body .cat{color:var(--muted);font-size:.82rem;margin-top:4px;font-family:"IBM Plex Mono",monospace;letter-spacing:.08em}
+.card-arrow{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid var(--hair-2);
+  background:rgba(255,255,255,.05);display:grid;place-items:center;
+  transition:transform .5s var(--ease),background .4s var(--ease),color .4s var(--ease)}
+.card:hover .card-arrow{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:rotate(-45deg)}
+/* 各分類的預設漸層底（圖載不到時的優雅 fallback）*/
+.g1{background:linear-gradient(140deg,#0f2a44,#1f6f9e)}
+.g2{background:linear-gradient(140deg,#20304f,#556cff)}
+.g3{background:linear-gradient(140deg,#4a2a10,#c9822a)}
+.g4{background:linear-gradient(140deg,#0f3d3a,#3fae9c)}
+.g5{background:linear-gradient(140deg,#241f52,#6d7dff)}
+.g6{background:linear-gradient(140deg,#3a123f,#c74a86)}
+
+/* ============================================================
+   9. 成就數據
+============================================================ */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.stat{background:var(--tray);border:1px solid var(--hair);border-radius:var(--r-out);padding:6px;
+  transition:border-color .5s var(--ease),transform .5s var(--ease)}
+.stat:hover{border-color:rgba(0,163,255,.3);transform:translateY(-4px)}
+.stat-core{background:var(--core);border-radius:var(--r-in);padding:30px 24px;height:100%;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.08)}
+.stat .n{font-family:"Clash Display",sans-serif;font-size:clamp(2.3rem,4.5vw,3.4rem);font-weight:600;color:var(--accent);
+  line-height:1;font-variant-numeric:tabular-nums}
+.stat .t{color:var(--muted);font-size:.85rem;margin-top:12px;line-height:1.4}
+
+/* ============================================================
+   10. 設計方法論（四支柱）
+============================================================ */
+.approach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.pillar{background:var(--tray);border:1px solid var(--hair);border-radius:var(--r-out);padding:6px;
+  transition:border-color .5s var(--ease),transform .5s var(--ease)}
+.pillar:hover{border-color:rgba(0,163,255,.3);transform:translateY(-5px)}
+.pillar-core{background:var(--core);border-radius:var(--r-in);padding:40px 36px;height:100%;position:relative;
+  overflow:hidden;box-shadow:inset 0 1px 1px rgba(255,255,255,.08)}
+.pillar .step{font-family:"IBM Plex Mono",monospace;color:var(--accent);font-size:.72rem;
+  letter-spacing:.2em;text-transform:uppercase}
+.pillar h3{font-size:1.55rem;margin:16px 0 14px}
+.pillar p{color:var(--muted);font-size:1rem;position:relative;z-index:1}
+.pillar .ghost{position:absolute;right:-6px;bottom:-42px;font-family:"Clash Display",sans-serif;
+  font-weight:600;font-size:8rem;color:rgba(255,255,255,.028);z-index:0;line-height:1}
+
+/* ============================================================
+   11. 關於
+============================================================ */
+.about{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.about-text h2{font-size:clamp(1.9rem,4.6vw,3rem);margin:18px 0 24px}
+.about-text p{color:var(--muted);margin-bottom:18px;font-size:1.05rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{border:1px solid var(--hair);background:var(--tray);border-radius:100px;padding:9px 17px;
+  font-size:.83rem;color:var(--text);font-family:"IBM Plex Mono",monospace;letter-spacing:.03em;
+  transition:border-color .3s var(--ease),color .3s var(--ease)}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+/* 精密硬體感的視覺（雙層邊框 + 旋轉環）*/
+.about-visual{background:var(--tray);border:1px solid var(--hair);border-radius:var(--r-out);padding:6px}
+.about-visual-core{aspect-ratio:3/4;border-radius:var(--r-in);position:relative;overflow:hidden;
+  background:radial-gradient(120% 90% at 50% 0%,var(--core-2),var(--core));display:grid;place-items:center;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.08)}
+.about-visual .ring{width:66%;aspect-ratio:1;border-radius:50%;border:1px solid rgba(0,163,255,.4);
+  animation:spin 26s linear infinite;position:relative}
+.about-visual .ring::before{content:"";position:absolute;inset:20%;border-radius:50%;border:1px solid var(--hair-2)}
+.about-visual .ring::after{content:"";position:absolute;inset:42%;border-radius:50%;
+  border:1px dashed rgba(0,163,255,.5)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.about-visual .tag{position:absolute;left:18px;bottom:16px;font-family:"IBM Plex Mono",monospace;
+  font-size:.68rem;letter-spacing:.12em;color:var(--faint)}
+.about-visual .corner{position:absolute;top:16px;right:18px;font-family:"IBM Plex Mono",monospace;
+  font-size:.66rem;color:var(--faint)}
+
+/* ============================================================
+   12. 聯絡 / 頁尾
+============================================================ */
+.contact{text-align:center}
+.contact h2{font-size:clamp(2.4rem,8.5vw,6rem);line-height:1.0}
+.contact .lead{color:var(--muted);max-width:520px;margin:24px auto 0;font-size:1.08rem}
+.contact .cta-row{display:flex;justify-content:center;margin-top:40px}
+.socials{display:flex;gap:14px;justify-content:center;margin-top:44px;flex-wrap:wrap}
+.social{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--hair);background:var(--tray);
+  border-radius:100px;padding:11px 20px;font-size:.88rem;color:var(--muted);font-weight:500;
+  transition:border-color .3s var(--ease),color .3s var(--ease),transform .3s var(--ease)}
+.social:hover{border-color:var(--accent);color:var(--text);transform:translateY(-2px)}
+footer{border-top:1px solid var(--hair);padding:30px 0;display:flex;justify-content:space-between;
+  color:var(--faint);font-size:.82rem;flex-wrap:wrap;gap:12px;position:relative;z-index:2;
+  font-family:"IBM Plex Mono",monospace;letter-spacing:.05em}
+
+/* ============================================================
+   13. 進場動畫（捲到才淡入 + 位移 + 微模糊）
+============================================================ */
+.reveal{opacity:0;transform:translateY(46px);filter:blur(8px);
+  transition:opacity .9s var(--ease-out),transform .9s var(--ease-out),filter .9s var(--ease-out)}
+.reveal.in{opacity:1;transform:none;filter:none}
+.reveal.d1{transition-delay:.09s}.reveal.d2{transition-delay:.18s}
+.reveal.d3{transition-delay:.27s}.reveal.d4{transition-delay:.36s}
+
+/* ============================================================
+   14. 響應式（手機）
+============================================================ */
+@media(max-width:960px){
+  .about{grid-template-columns:1fr;gap:40px}
+  .about-visual-core{aspect-ratio:4/3;max-height:360px}
+  .about-visual .about-order{order:-1}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .approach-grid{grid-template-columns:1fr}
+  .card.feature,.card.wide{grid-column:span 12}
+  .card.feature{grid-row:auto}
+  .card{grid-column:span 6}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:block}
+  .card,.card.feature,.card.wide{grid-column:span 12}
+  .card.feature .card-thumb{min-height:240px}
+  .stats{grid-template-columns:1fr 1fr}
+  .section-head{gap:14px}
+}
+
+/* ============================================================
+   15. 尊重「減少動態」偏好設定（無障礙）
+============================================================ */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .reveal{opacity:1;transform:none;filter:none}
+  .glow{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="mesh"></div>
+<div class="grain"></div>
+<div class="glow" id="glow" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ===================== 導覽列（島型玻璃膠囊）===================== -->
+<header>
+  <nav class="nav-island" aria-label="Primary">
+    <a href="#top" class="nav-logo"><img src="assets/images/shared/joel-chang-logo.png" alt="JOEL CHANG" width="121" height="20"/></a>
+    <div class="nav-links">
+      <a href="#work">Works</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get in touch<span class="ic" aria-hidden="true">↗</span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- 全螢幕玻璃選單 -->
+<div class="overlay" id="overlay">
+  <a href="#work">Works</a>
+  <a href="#approach">Approach</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <div class="om">Joel Chang · Industrial Designer</div>
+</div>
+
+<!-- ===================== 首頁 Hero ===================== -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <span class="eyebrow reveal">Joel Chang · Industrial Designer</span>
+    <h1 class="reveal d1">Designing memorable<br>products through <span class="stroke">clarity</span><br>&amp; <span class="accent">manufacturable</span> beauty.</h1>
+    <p class="reveal d2">I design with clarity, intent, and a disciplined aesthetic—crafting products where form, user logic, and engineering converge into a distinctive and meaningful experience.</p>
+    <div class="hero-cta reveal d3">
+      <a href="#work" class="btn btn-primary">View Work<span class="ic" aria-hidden="true">↗</span></a>
+      <a href="#contact" class="btn btn-ghost">Get in touch<span class="ic" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="dot"></span></div>
+</section>
+
+<!-- ===================== 滿版相片庫跑馬燈（同舊站首頁輪播）===================== -->
+<div class="photo-marquee" aria-label="Selected work gallery">
+  <div class="photo-track">
+    <img src="assets/images/t-interceptormp/1e9c09_9e3149f4fb62436d88f24b1bac854e51~mv2.jpg" alt="T. Interceptor MP" loading="eager">
+    <img src="assets/images/interstellar05/1e9c09_264a4186e7a2452da6a7e7137e00cd95~mv2.jpg" alt="Interstellar 05" loading="lazy">
+    <img src="assets/images/ocean-series/1e9c09_25cb2ee698df47c7814a18c7c2b0848c~mv2.jpg" alt="Ocean Series" loading="lazy">
+    <img src="assets/images/moai-router/1e9c09_56f3bf1699bb4e948812dd85f89a05f6~mv2.jpg" alt="MoAI Router" loading="lazy">
+    <img src="assets/images/home/1e9c09_436d137e5fb54334b193b22ccec6974b~mv2.jpg" alt="Electronics" loading="lazy">
+    <img src="assets/images/wi-fi7-hgu-ap/1e9c09_e67511e287594fed9ee981edd66ebbc1~mv2.jpg" alt="Wi-Fi 7 HGU/AP" loading="lazy">
+    <img src="assets/images/zenfone-9/1e9c09_5dd3ac10ebe349b9810391658ac0056f~mv2.jpg" alt="ASUS Zenfone 9" loading="lazy">
+    <img src="assets/images/sagittarius-laptop/1e9c09_75dc687c971b46c1812de038c70d9f1f~mv2.jpg" alt="SAGITTARIUS Laptop" loading="lazy">
+    <img src="assets/images/nlg-mma200/1e9c09_f326763edfef4b2baf4d242b0ef3d2e3~mv2.jpg" alt="NLG MMA200" loading="lazy">
+    <img src="assets/images/about/1e9c09_0022af7001604ddf90587b2e73ec8de8~mv2.png" alt="Design work" loading="lazy">
+    <img src="assets/images/t-interceptormp/1e9c09_9e3149f4fb62436d88f24b1bac854e51~mv2.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="assets/images/interstellar05/1e9c09_264a4186e7a2452da6a7e7137e00cd95~mv2.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="assets/images/ocean-series/1e9c09_25cb2ee698df47c7814a18c7c2b0848c~mv2.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="assets/images/moai-router/1e9c09_56f3bf1699bb4e948812dd85f89a05f6~mv2.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="assets/images/home/1e9c09_436d137e5fb54334b193b22ccec6974b~mv2.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="assets/images/wi-fi7-hgu-ap/1e9c09_e67511e287594fed9ee981edd66ebbc1~mv2.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="assets/images/zenfone-9/1e9c09_5dd3ac10ebe349b9810391658ac0056f~mv2.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="assets/images/sagittarius-laptop/1e9c09_75dc687c971b46c1812de038c70d9f1f~mv2.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="assets/images/nlg-mma200/1e9c09_f326763edfef4b2baf4d242b0ef3d2e3~mv2.jpg" alt="" aria-hidden="true" loading="lazy">
+    <img src="assets/images/about/1e9c09_0022af7001604ddf90587b2e73ec8de8~mv2.png" alt="" aria-hidden="true" loading="lazy">
+  </div>
+</div>
+
+<!-- ===================== 跑馬燈：專長 ===================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Design Innovation</span><span>Aesthetic Direction</span><span>Material &amp; CMF</span><span>User Experience</span><span>Customer-Centric Thinking</span>
+    <span>Design Innovation</span><span>Aesthetic Direction</span><span>Material &amp; CMF</span><span>User Experience</span><span>Customer-Centric Thinking</span>
+  </div>
+</div>
+
+<!-- ===================== 作品區：六大分類（Bento）===================== -->
+<!-- 目前每張卡片連到你舊網站的分類頁。日後可改成新網站的作品內頁 -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="idx">// 01 — SELECTED WORK</span>
+        <h2>Works</h2>
+      </div>
+      <p class="sub">Cross-category design—turning complex requirements into clear, market-ready directions.</p>
+    </div>
+    <div class="bento">
+      <!-- Defense = 大主卡 -->
+      <a class="card feature reveal" href="defense.html">
+        <div class="card-core">
+          <div class="card-thumb">
+            <span class="card-num mono">01</span><div class="fill g1"></div>
+            <img class="photo" loading="lazy" width="900" height="675" alt="Defense projects" onerror="this.remove()"
+              src="assets/images/t-interceptormp/1e9c09_9e3149f4fb62436d88f24b1bac854e51~mv2.jpg">
+          </div>
+          <div class="card-body"><div><h3>Defense</h3><div class="cat">View projects</div></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+        </div>
+      </a>
+      <a class="card reveal d1" href="networking.html">
+        <div class="card-core">
+          <div class="card-thumb">
+            <span class="card-num mono">02</span><div class="fill g2"></div>
+            <img class="photo" loading="lazy" width="900" height="675" alt="Networking projects" onerror="this.remove()"
+              src="assets/images/moai-router/1e9c09_56f3bf1699bb4e948812dd85f89a05f6~mv2.jpg">
+          </div>
+          <div class="card-body"><div><h3>Networking</h3><div class="cat">View projects</div></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+        </div>
+      </a>
+      <a class="card reveal d2" href="electronics.html">
+        <div class="card-core">
+          <div class="card-thumb">
+            <span class="card-num mono">03</span><div class="fill g3"></div>
+            <img class="photo" loading="lazy" width="900" height="675" alt="Electronics projects" onerror="this.remove()"
+              src="assets/images/home/1e9c09_436d137e5fb54334b193b22ccec6974b~mv2.jpg">
+          </div>
+          <div class="card-body"><div><h3>Electronics</h3><div class="cat">View projects</div></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+        </div>
+      </a>
+      <a class="card reveal" href="lifestyle.html">
+        <div class="card-core">
+          <div class="card-thumb">
+            <span class="card-num mono">04</span><div class="fill g4"></div>
+            <img class="photo" loading="lazy" width="900" height="675" alt="Lifestyle projects" onerror="this.remove()"
+              src="assets/images/interstellar05/1e9c09_264a4186e7a2452da6a7e7137e00cd95~mv2.jpg">
+          </div>
+          <div class="card-body"><div><h3>Lifestyle</h3><div class="cat">View projects</div></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+        </div>
+      </a>
+      <a class="card reveal d1" href="industrial.html">
+        <div class="card-core">
+          <div class="card-thumb">
+            <span class="card-num mono">05</span><div class="fill g5"></div>
+            <img class="photo" loading="lazy" width="900" height="675" alt="Industrial projects" onerror="this.remove()"
+              src="assets/images/wi-fi7-hgu-ap/1e9c09_e67511e287594fed9ee981edd66ebbc1~mv2.jpg">
+          </div>
+          <div class="card-body"><div><h3>Industrial</h3><div class="cat">View projects</div></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+        </div>
+      </a>
+      <a class="card reveal d2" href="experimental.html">
+        <div class="card-core">
+          <div class="card-thumb">
+            <span class="card-num mono">06</span><div class="fill g6"></div>
+            <img class="photo" loading="lazy" width="900" height="675" alt="Experimental projects" onerror="this.remove()"
+              src="assets/images/zenfone-9/1e9c09_5dd3ac10ebe349b9810391658ac0056f~mv2.jpg">
+          </div>
+          <div class="card-body"><div><h3>Experimental</h3><div class="cat">View projects</div></div><span class="card-arrow" aria-hidden="true">↗</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 成就數據 ===================== -->
+<section id="stats" style="padding-top:0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><div class="stat-core"><div class="n"><span class="count" data-num="8">0</span>+</div><div class="t">Products in Mass Production</div></div></div>
+      <div class="stat reveal d1"><div class="stat-core"><div class="n"><span class="count" data-num="15">0</span>+</div><div class="t">Collaborations</div></div></div>
+      <div class="stat reveal d2"><div class="stat-core"><div class="n"><span class="count" data-num="30">0</span>+</div><div class="t">Production-Ready Prototypes</div></div></div>
+      <div class="stat reveal d3"><div class="stat-core"><div class="n"><span class="count" data-num="8">0</span></div><div class="t">Design Awards Received</div></div></div>
+      <div class="stat reveal d4"><div class="stat-core"><div class="n"><span class="count" data-num="2">0</span>+</div><div class="t">Family Design Languages</div></div></div>
+    </div>
+    <!-- 客戶 logo 牆（白色 logo、透明底）-->
+    <figure class="clients reveal">
+      <img loading="lazy" src="assets/images/home/1e9c09_7e533db3abc34d9d9743d3f0a5a5c338~mv2.png" alt="Clients: Google Fiber, AT&amp;T, Airgain, Rigado, Lionic, Gemtek, Cogeco, Rogers and more">
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== Expertise 能力卡跑馬燈 ===================== -->
+<section id="expertise" style="padding:70px 0 90px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="idx">// EXPERTISE</span>
+        <h2>What I bring</h2>
+      </div>
+      <p class="sub">End-to-end capability—from research and rapid 2D/3D exploration to CMF and production.</p>
+    </div>
+  </div>
+  <div class="skill-marquee" aria-label="Capabilities">
+    <div class="skill-track">
+      <img loading="lazy" src="assets/images/home/1e9c09_b6df4b7e39f64785b2963c670e3852eb~mv2.jpg" alt="Industrial Design">
+      <img loading="lazy" src="assets/images/home/1e9c09_bfcccecfd44a41359ca76da0e537ad51~mv2.jpg" alt="Rapid 2D Design">
+      <img loading="lazy" src="assets/images/home/1e9c09_a5fc0862968d49c39752ee9c288f5d39~mv2.jpg" alt="Solid 3D Modeling Skill">
+      <img loading="lazy" src="assets/images/home/1e9c09_e5d98527df1c434d970b36ae59d0f0e2~mv2.jpg" alt="CMF Design">
+      <img loading="lazy" src="assets/images/home/1e9c09_6db46c56cb10482dbcbbfb3c0eaa6919~mv2.jpg" alt="Design capability">
+      <img loading="lazy" src="assets/images/home/1e9c09_3c2d36fcbde543cf8fc22986b4296b64~mv2.jpg" alt="Design Validation">
+      <img loading="lazy" src="assets/images/home/1e9c09_3d716e9f3c55459cba845bf0b0ed2067~mv2.jpg" alt="Parametric Texture Design">
+      <img loading="lazy" src="assets/images/home/1e9c09_41c646833a4e4f93bad362a1274c575f~mv2.jpg" alt="Production Inspection">
+      <img loading="lazy" src="assets/images/home/1e9c09_1912939e7e5c4a78ae7b44e1400b2b9b~mv2.jpg" alt="Design Innovation">
+      <img loading="lazy" src="assets/images/home/1e9c09_cc76623ee983415c9ee2e4d41192e84d~mv2.jpg" alt="Production Ready">
+      <img loading="lazy" src="assets/images/home/1e9c09_f6619054456b4581a6aac77dc1e1a96b~mv2.jpg" alt="UCD Design">
+      <img loading="lazy" src="assets/images/home/1e9c09_b6df4b7e39f64785b2963c670e3852eb~mv2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/home/1e9c09_bfcccecfd44a41359ca76da0e537ad51~mv2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/home/1e9c09_a5fc0862968d49c39752ee9c288f5d39~mv2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/home/1e9c09_e5d98527df1c434d970b36ae59d0f0e2~mv2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/home/1e9c09_6db46c56cb10482dbcbbfb3c0eaa6919~mv2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/home/1e9c09_3c2d36fcbde543cf8fc22986b4296b64~mv2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/home/1e9c09_3d716e9f3c55459cba845bf0b0ed2067~mv2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/home/1e9c09_41c646833a4e4f93bad362a1274c575f~mv2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/home/1e9c09_1912939e7e5c4a78ae7b44e1400b2b9b~mv2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/home/1e9c09_cc76623ee983415c9ee2e4d41192e84d~mv2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/home/1e9c09_f6619054456b4581a6aac77dc1e1a96b~mv2.jpg" alt="" aria-hidden="true">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 設計方法論（四支柱）===================== -->
+<section id="approach">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="idx">// 02 — DESIGN APPROACH</span>
+        <h2>How I work</h2>
+      </div>
+      <p class="sub">From real behaviors to buildable execution—every choice serves a clear purpose.</p>
+    </div>
+    <div class="approach-grid">
+      <div class="pillar reveal"><div class="pillar-core"><span class="ghost">01</span><div class="step">Discovery</div><h3>Clarity Through Insight</h3><p>Designing from real behaviors, not assumptions. Every design choice—form, flow, or detail—must serve a clear purpose and contribute to a coherent whole.</p></div></div>
+      <div class="pillar reveal d1"><div class="pillar-core"><span class="ghost">02</span><div class="step">Iteration</div><h3>Rapid Validation</h3><p>Hands-on prototyping is essential. Testing ideas quickly with physical models drives fast learning, continuous refinement, and stronger final outcomes.</p></div></div>
+      <div class="pillar reveal"><div class="pillar-core"><span class="ghost">03</span><div class="step">Realization</div><h3>Buildable Execution</h3><p>Design remains a concept until it survives engineering, cost, and manufacturing constraints. Close collaboration with cross-functional teams ensures products ship with structural integrity.</p></div></div>
+      <div class="pillar reveal d1"><div class="pillar-core"><span class="ghost">04</span><div class="step">Refinement</div><h3>Aesthetic Discipline</h3><p>Relentless attention to proportion, tension, and surface quality. Products that are visually calm, distinct, and memorable—without relying on fleeting trends.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 關於 ===================== -->
+<section id="about">
+  <div class="wrap about">
+    <div class="about-text reveal">
+      <span class="idx">// 03 — ABOUT</span>
+      <h2>Design is how I make sense of the world.</h2>
+      <p>By understanding people, context, and brand values, I create solutions that communicate clearly, function naturally, and express a refined sense of identity.</p>
+      <p>Across diverse product categories, I focus on turning complex requirements into clear design directions—balancing user needs, product identity, form language, and CMF details into meaningful, market-ready solutions.</p>
+      <div class="chips">
+        <span class="chip">Design Innovation</span><span class="chip">Aesthetic Direction</span>
+        <span class="chip">Material &amp; CMF</span><span class="chip">User Experience</span><span class="chip">Customer-Centric</span>
+      </div>
+    </div>
+    <div class="about-visual about-order reveal d1">
+      <div class="about-visual-core">
+        <span class="corner mono">FIG. 01</span>
+        <div class="ring"></div>
+        <!-- ← 這裡可換成你的個人照或代表作圖片 -->
+        <span class="tag">← Add your photo or hero shot here</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 聯絡 ===================== -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="eyebrow reveal">Get in touch</span>
+    <h2 class="reveal d1" style="margin-top:26px">Let's shape the next<br>product together.</h2>
+    <p class="lead reveal d2">Open to industrial design roles, collaborations, and product ventures.</p>
+    <div class="cta-row reveal d2">
+      <!-- ← 換成你的 Email；或保留連到你的聯絡頁 -->
+      <a href="contact.html">Contact me<span class="ic" aria-hidden="true">↗</span></a>
+    </div>
+    <div class="socials reveal d3">
+      <a class="social" href="https://www.linkedin.com/in/joel-chang" target="_blank" rel="noopener">LinkedIn<span aria-hidden="true">↗</span></a>
+      <a class="social" href="https://www.behance.net/joe10912345" target="_blank" rel="noopener">Behance<span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 JOEL CHANG</span>
+  <span>INDUSTRIAL DESIGN PORTFOLIO — VERSION B</span>
+</footer>
+
+<script>
+/* ============================================================
+   互動效果（不用改也能運作）
+============================================================ */
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* 1. 捲動進度條 + 導覽島下捲隱藏/上捲浮回（用 transform，不吃效能）*/
+const progress = document.getElementById('progress');
+const navHeader = document.querySelector('header');
+let ticking = false, lastY = 0;
+function onScroll(){
+  if(ticking) return; ticking = true;
+  requestAnimationFrame(()=>{
+    const h = document.documentElement;
+    const y = h.scrollTop;
+    const p = y / (h.scrollHeight - h.clientHeight || 1);
+    progress.style.transform = 'scaleX(' + p + ')';
+    // 選單開啟時不藏（漢堡鈕要一直看得到）
+    const hide = y > lastY && y > 160 && !document.body.classList.contains('menu-open');
+    navHeader.classList.toggle('hidden', hide);
+    lastY = y;
+    ticking = false;
+  });
+}
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+/* 2. 進場動畫：捲到才淡入（IntersectionObserver）*/
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.count').forEach(runCount);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.16, rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* 3. 數字跳動計數 */
+function runCount(el){
+  const target = +el.dataset.num;
+  if(reduce){ el.textContent = target; return; }
+  let cur = 0; const step = Math.max(1, Math.ceil(target/38));
+  const t = setInterval(()=>{ cur += step; if(cur>=target){cur=target;clearInterval(t);} el.textContent = cur; }, 30);
+}
+
+/* 4. 滑鼠跟隨光暈（只在有精準指標、且未要求減少動態時）*/
+const glow = document.getElementById('glow');
+if(!reduce && window.matchMedia('(pointer:fine)').matches){
+  window.addEventListener('mousemove', e=>{
+    glow.style.opacity = 1;
+    glow.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px) translate(-50%,-50%)';
+  }, {passive:true});
+  document.addEventListener('mouseleave', ()=> glow.style.opacity = 0);
+}
+
+/* 5. 漢堡選單開關（變形成 X + 全螢幕玻璃選單）*/
+const burger = document.getElementById('burger');
+const overlay = document.getElementById('overlay');
+function toggleMenu(open){
+  document.body.classList.toggle('menu-open', open);
+  burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+burger.addEventListener('click', ()=> toggleMenu(!document.body.classList.contains('menu-open')));
+overlay.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> toggleMenu(false)));
+document.addEventListener('keydown', e=>{ if(e.key === 'Escape') toggleMenu(false); });
+</script>
+<script>(function(){Object.defineProperty(window,"joe60803",{get:function(){localStorage.jcOwner="1";location.reload();return "已解除圖片保護";}});Object.defineProperty(window,"joe60803off",{get:function(){localStorage.jcOwner="0";location.reload();return "已恢復圖片保護";}});if(localStorage.jcOwner==="1")return;var s=document.createElement("style");s.textContent="img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;user-select:none}";document.head.appendChild(s);document.addEventListener("contextmenu",function(e){if(e.target.closest("img,figure,.card-thumb,.pcard-thumb"))e.preventDefault()});document.addEventListener("dragstart",function(e){if(e.target.tagName==="IMG")e.preventDefault()});})();</script>
+</body>
+</html>

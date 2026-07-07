@@ -1,0 +1,166 @@
+══════════════════════════════════════════
+頁面：MoAI Router
+檔案：moai-router.html
+══════════════════════════════════════════
+
+
+【圖 1】assets/images/moai-router/1e9c09_56f3bf1699bb4e948812dd85f89a05f6~mv2.jpg
+
+Dr. AI HealthCare
+MoAI Router
+Technology that feels human
+The Dr.AI MoAI Router is an innovative Wi-Fi 7 AI solution designed to assist users in managing their health more effectively. By integrating an AI Avatar for medical pre-assessment, it reduces documentation workloads for healthcare providers by automatically transcribing patient interactions into structured SOAP notes. This project highlights a balance of high-end product aesthetics and functional reliability in the smart healthcare sector.
+
+【圖 2】assets/images/moai-router/1e9c09_35ca2502f1ee4f549916cfb3a2b66a76~mv2.jpg
+
+The Best Choice Award
+COMPUTEX 2025
+Client
+Gemtek
+Year
+2025
+Designer
+Joel Chang (Lead)
+Hazel Chang
+Contribution
+Concept Development
+Industrial Design
+User Experience
+Color, Material and Finish
+Prototyping
+Design for Manufacture
+
+【圖 3】assets/images/moai-router/1e9c09_8cbac6cda7524df58b20de9ef431529e~mv2.jpg
+
+Designed for Homes
+and Healthcare Spaces
+Real-life Use
+MoAI Router fits naturally into home care and senior living environments while seamlessly integrating into hospitals and clinics.
+Home Care & Senior Living
+Intuitive AI Avatar for voice interactions
+Smart medical diagnosis
+Friendly form reduces anxiety
+Reliable connectivity, always on
+
+【圖 4】assets/images/moai-router/1e9c09_a195b1086a734c5eaf75427979493336~mv2.jpg
+
+Clinical & Healthcare Environments
+Meet Gemtek
+MoAI Family
+Design Inspiration
+MoAI Router extends Gemtek's family design language through a softer and more human-centered expression. Inspired by the iconic Moai statues of Easter Island, the design translates a sense of protection, wisdom, and calm presence into a smart healthcare device for homes and clinical environments.
+
+【圖 5】assets/images/moai-router/1e9c09_ec2bc437779c4f02ada22c07ef6a5ca2~mv2.png
+
+First Gen
+Second Gen
+Third Gen
+
+【圖 6】assets/images/moai-router/1e9c09_e09215f6dc1e4fe2bdac5f66e3d7e4e6~mv2.jpg
+
+Inspired by an Icon Rooted in Culture
+Origin
+The Moai statue symbolizes protection, wisdom, and connection. Its calm presence and strong silhouette inspired the product's role as a health guardian, bridging advanced AI technology with a more approachable human experience.
+Sense of Roundness and Joy
+Exploration
+For the third generation of the MoAI Router, the overall silhouette was softened to create a warmer and more approachable expression. By shortening the nose, subtly raising the mouth, and refining the facial curves, the design reduces visual rigidity while maintaining the iconic Moai-inspired identity.
+
+【圖 7】assets/images/moai-router/1e9c09_4de520de426c4c77b968aa90d5505416~mv2.png
+
+
+【圖 8】assets/images/moai-router/1e9c09_98fb4da6642345a39de831063cbb53b6~mv2.png
+
+Exploring The Facial Expression Design
+Detail Design
+To evoke a feeling of satisfaction and contentment, we explored various positions, proportions, mouth shapes, and lip curvatures, ultimately selecting designs that capture both a gentle smile and a sense of warmth.
+
+【圖 9】assets/images/moai-router/1e9c09_a2d2dc96497644cd9aa3f0cd31378851~mv2.png
+
+Carefully refining
+the details
+To highlight the Moai's distinctive body outline, we removed the complex design elements from previous generations, simplifying the venting holes for a cleaner look. With careful attention to detail, we worked closely with the engineering team to minimize the venting hole area, optimize the compact dimensions, and reduce the number of plastic parts, refining the design to perfection.
+
+【圖 10】assets/images/moai-router/1e9c09_e288629ad39843cfa936a54e54430a55~mv2.png
+
+
+【圖 11】assets/images/moai-router/1e9c09_689330178c7f43e2b38a43f2f94eaf86~mv2.png
+
+
+【圖 12】assets/images/moai-router/1e9c09_26493bd061364f8b852421cb84b8dddc~mv2.jpg
+
+
+【圖 13】assets/images/moai-router/1e9c09_24d8338b22dd4ae9a81f98261a9464ca~mv2.png
+
+The vent gradually narrows toward the edge, visually integrating it into the product surface.
+
+【圖 14】assets/images/moai-router/1e9c09_478e15ba416e42e79e1e6f3fae826a5c~mv2.png
+
+Pursue the smooth transition effect of curved surfaces and achieve G2 continuity.
+
+【圖 15】assets/images/moai-router/1e9c09_55eb772ff8b24880934f4129180acc49~mv2.png
+
+
+【圖 16】assets/images/moai-router/1e9c09_1f656b2f355a40d3975128b7557a57ba~mv2.png
+
+Speckled
+Effect Texture
+PCR Material
+​Inspired by stone, including basalt and cobblestone, the design incorporates speckled recycled plastic. This material not only mimics the texture of the stone but also enhances its refinement, achieving a harmonious balance between aesthetics and sustainability.
+
+【圖 17】assets/images/moai-router/1e9c09_18d5339364744290bc17f879e5f1b1f6~mv2.png
+
+
+【圖 18】assets/images/moai-router/1e9c09_303ca8c90a114e20ac04a2eff32070b8~mv2.png
+
+Basalt Black
+Formed through volcanic activity, basalt is highly heat-resistant and naturally durable. Its subtle texture, layered with fine speckles and tonal variation, creates a grounded and elemental material expression that aligns with the AI Router's character.
+
+【圖 19】assets/images/moai-router/1e9c09_fc2395bd9ca946a3ac80c28bdba612a8~mv2.png
+
+Pebble Gray
+Pebbles come in a range of muted tones, each with its own surface character. Smooth and rounded by centuries of natural erosion, they embody quiet resilience and timelessness, qualities that directly inform the AI Router's calm, enduring presence.
+
+【圖 20】assets/images/moai-router/1e9c09_b5dc6ebc81a54357a241a1c421c2c862~mv2.jpg
+
+
+【圖 21】assets/images/moai-router/1e9c09_88ace3cf8baf4468b07b0f26b02044c5~mv2.jpg
+
+
+【圖 22】assets/images/moai-router/1e9c09_12ae7a3db70740a7adfc59b8ae7de943~mv2.jpg
+
+Display Stand Kit
+Accessory Design
+Echoing the core design language of the product, this kit achieves a seamless and integrated aesthetic. Prioritizing user experience, we have precisely calibrated the center of gravity and viewing angle, paired with an anti-slip base to perfectly balance elegance with stability.
+
+【圖 23】assets/images/moai-router/1e9c09_c74f40e2dc54420bb48c57249e743781~mv2.png
+
+
+【圖 24】assets/images/moai-router/1e9c09_6f07f58802c940139ad7bf44035c2076~mv2.png
+
+
+【圖 25】assets/images/moai-router/1e9c09_109bc3421c5443cc94b44ae5410924b1~mv2.jpg
+
+
+【圖 26】assets/images/moai-router/1e9c09_284f88eaa3824126afe9662935906abf~mv2.jpg
+
+
+【圖 27】assets/images/moai-router/1e9c09_706d6d33000949f985f4d55b71f7b40e~mv2.jpg
+
+
+【圖 28】assets/images/moai-router/1e9c09_b3ead4b46dce40be921c0d75aafd2cb4~mv2.jpg
+
+
+【圖 29】assets/images/moai-router/1e9c09_a8c791a3a26e4d1b9e1e4b710b1a22c6~mv2.jpg
+
+
+【圖 30】assets/images/moai-router/1e9c09_9c86e93afaf84acbbd83d542f6ff37d2~mv2.jpg
+
+
+【圖 31】assets/images/moai-router/1e9c09_7f2d9e81c5e44b43911c59e1505fb821~mv2.jpg
+
+
+【圖 32】assets/images/moai-router/1e9c09_7770649255b54ef79dd4702babb4abf4~mv2.jpg
+
+
+【圖 33】assets/images/moai-router/1e9c09_a41d0c97734345049d51675cf81834bb~mv2.jpg
+

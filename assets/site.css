@@ -1,0 +1,111 @@
+/* ============================================================
+   Joel Chang Portfolio — 內頁共用樣式
+   （分類頁 / 作品頁 / About / Contact 共用）
+   想換主題色：改 --accent 一處即可
+============================================================ */
+:root{
+  --bg:#050506; --core:#0e0e12; --core-2:#131318;
+  --tray:rgba(255,255,255,.045);
+  --text:#f5f5f7; --muted:#9c9ca6; --faint:#8a8a94;
+  --accent:#00A3FF; --accent-ink:#0a0a0c;
+  --hair:rgba(255,255,255,.08); --hair-2:rgba(255,255,255,.14);
+  --glass:rgba(12,12,16,.62);
+  --r-out:26px; --r-in:20px; --max:1080px;
+  --ease:cubic-bezier(.22,.68,0,1); --ease-out:cubic-bezier(.16,1,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:dark}
+body{background:var(--bg);color:var(--text);
+  font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,-apple-system,"Microsoft JhengHei",sans-serif;
+  line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:"Clash Display","Noto Sans TC",system-ui,sans-serif;
+  letter-spacing:-.02em;line-height:1.06;font-weight:600;text-wrap:balance}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;height:auto}
+::selection{background:var(--accent);color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{width:min(92%,var(--max));margin-inline:auto}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+
+/* ── 導覽列 ───────────────────────────── */
+.topbar{position:sticky;top:0;z-index:100;background:var(--glass);
+  backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);
+  border-bottom:1px solid var(--hair)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0;flex-wrap:wrap}
+.logo{font-family:"Clash Display",sans-serif;font-weight:600;font-size:1.05rem;white-space:nowrap;display:flex;align-items:center}
+.logo span{color:var(--accent)}
+.logo img{height:20px;width:auto;transition:opacity .3s var(--ease)}
+.logo:hover img{opacity:.8}
+.nav{display:flex;gap:20px;font-size:.85rem;font-weight:500;flex-wrap:wrap}
+.nav a{color:var(--muted);padding:4px 0;transition:color .3s var(--ease);position:relative}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--text)}
+.nav a[aria-current="page"]::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1.5px;background:var(--accent)}
+
+/* ── 頁面標頭 ─────────────────────────── */
+.page-hero{padding:90px 0 40px}
+.crumb{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--accent);display:flex;gap:10px;align-items:center}
+.crumb a{color:var(--faint)}.crumb a:hover{color:var(--text)}
+.page-hero h1{font-size:clamp(2.3rem,6.5vw,4.4rem);margin-top:18px}
+.page-hero .sub{color:var(--muted);font-size:clamp(1rem,2vw,1.2rem);margin-top:16px;max-width:640px}
+
+/* ── 作品卡片格（分類頁）──────────────── */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:30px 0 80px}
+.pcard{background:var(--tray);border:1px solid var(--hair);border-radius:var(--r-out);padding:6px;
+  display:block;transition:transform .5s var(--ease),border-color .4s var(--ease)}
+.pcard:hover{transform:translateY(-6px);border-color:rgba(0,163,255,.35)}
+.pcard-core{background:var(--core);border-radius:var(--r-in);overflow:hidden;height:100%;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.08);display:flex;flex-direction:column}
+.pcard-thumb{aspect-ratio:4/3;overflow:hidden;background:var(--core-2)}
+.pcard-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.pcard:hover .pcard-thumb img{transform:scale(1.05)}
+.pcard-body{padding:16px 18px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pcard-body h2{font-size:1.12rem;font-weight:600;line-height:1.2}
+.pcard-body .c{color:var(--muted);font-size:.75rem;margin-top:3px;font-family:"IBM Plex Mono",monospace}
+.pcard-arrow{width:36px;height:36px;flex:none;border-radius:50%;border:1px solid var(--hair-2);
+  display:grid;place-items:center;font-size:.85rem;transition:.4s var(--ease)}
+.pcard:hover .pcard-arrow{background:var(--accent);color:var(--accent-ink);transform:rotate(-45deg)}
+
+/* ── 作品內文（文字 + 圖片流）─────────── */
+.flow{padding:10px 0 90px}
+.flow p{color:var(--muted);font-size:1.04rem;max-width:760px;margin:22px auto}
+.flow .stack{max-width:760px;margin:26px auto 6px}
+.flow .stack div{color:var(--text);font-weight:500}
+.flow .stack div:first-child{font-family:"IBM Plex Mono",monospace;font-size:.74rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.flow h2{font-size:clamp(1.5rem,3.4vw,2.2rem);max-width:760px;margin:54px auto 8px}
+.flow figure{margin:26px auto;max-width:1080px;background:var(--tray);border:1px solid var(--hair);
+  border-radius:var(--r-out);padding:6px}
+.flow figure img{border-radius:var(--r-in);width:100%}
+
+/* ── 頁尾 ─────────────────────────────── */
+footer{border-top:1px solid var(--hair);padding:34px 0;display:flex;justify-content:space-between;
+  gap:12px;flex-wrap:wrap;color:var(--faint);font-size:.8rem;
+  font-family:"IBM Plex Mono",monospace;letter-spacing:.05em}
+footer .fl{display:flex;gap:18px}
+footer a:hover{color:var(--text)}
+
+/* ── 滑鼠跟隨漸層光暈 ─────────────────── */
+.glow{position:fixed;top:0;left:0;width:560px;height:560px;z-index:1;pointer-events:none;
+  border-radius:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity .4s var(--ease);
+  will-change:transform;
+  background:radial-gradient(circle,rgba(0,163,255,.16),transparent 62%)}
+main{position:relative;z-index:2}   /* 內容在光暈之上，文字圖片不被霧化 */
+
+/* ── 進場動畫 ─────────────────────────── */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out)}
+.rv.in{opacity:1;transform:none}
+
+/* ── 響應式 ───────────────────────────── */
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr}
+  .page-hero{padding:60px 0 24px}
+  .topbar-in{padding:12px 0}
+  .nav{gap:14px;font-size:.8rem}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+  .rv{opacity:1;transform:none}
+  .glow{display:none}
+}

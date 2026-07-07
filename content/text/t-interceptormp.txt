@@ -1,0 +1,54 @@
+T. Interceptor MP | Joel Chang Design
+top of page
+Works
+Defense
+Networking
+Electronics
+Lifestyle
+Industrial
+Experimental
+About
+Contact
+Drone
+T. Interceptor MP
+Autonomous AI-powered drone, guarding airspace with speed and agility.
+As drone threats grow more prevalent, T.Interceptor MP is a multi-functional defense system built for urban security and critical infrastructure protection. It integrates AI image recognition, modular design, and cloud communication to perform real-time detection, monitoring, and interception in complex environments.
+Powered by AI flight control and visual recognition, the system autonomously detects and locks onto suspicious aerial targets without continuous human oversight. Once confirmed, it launches a physical capture net to intercept the threat and bring it safely to the ground &mdash; delivering high-mobility protection with minimal impact on the surrounding environment.
+Client
+Tron Future
+Year
+2025-2026
+Designer
+Joel Chang
+Marcus Kung
+Contribution
+Concept Development
+Industrial Design
+User Experience
+Color, Material and Finish
+Prototyping
+Design for Manufacture
+Reconnaissance, interception, and rapid response &mdash; one platform, multiple missions.
+Autonomous Detection, Tracking & Interception
+No need for personnel with drone jamming guns on-site. The T.Interceptor MP intercepts threats autonomously, while net-based capture minimizes collateral impact to the surrounding environment.
+Form Follows Function
+The T. Interceptor MP breaks from the utilitarian bulk of conventional defense platforms. Its compact, muscular silhouette communicates readiness and versatility &mdash; a form shaped equally for high-speed pursuit and steady reconnaissance. Every surface is resolved with intent, projecting capability without unnecessary visual complexity.
+Flight Testing & Validation
+From controlled indoor environments to open-field scenarios, each flight test validates the system's autonomous detection, tracking, and net-based capture performance. Iterative testing under real-world conditions ensures reliability across diverse operational environments &mdash; refining flight dynamics, sensor accuracy, and structural durability before deployment.
+The rear-mounted battery module is designed for rapid field replacement &mdash; minimizing downtime between missions. The tool-free extraction mechanism allows operators to swap power units in seconds, keeping the system mission-ready with minimal interruption.
+Multi-Sensor Gimbal System
+Equipped with a high-performance stabilized gimbal integrating visible light, laser rangefinder, and thermal imaging &mdash; enabling all-weather target identification, distance measurement, and tracking across day and night operations.
+Angled Net Launcher &mdash; CG-Aligned Design
+The capture net launcher is mounted at a calculated angle rather than horizontal. This ensures the reaction force during net deployment passes through the drone's center of gravity, preventing destabilizing torque that could cause mid-flight rollover. The angled geometry is seamlessly integrated into the body's surface language, turning an engineering constraint into a defining design detail.
+Application Fields
+Urban Guarding
+Stadium / Large-scale event
+Remote Area Scouting
+Border Security
+Key Infrastructure Defense
+Wind Power Plant
+Water Dam
+Nuclear Power Plant
+2025 Taipei Aerospace & Defense Technology Exhibition
+© 2026 by Joel Chang. All rights reserved.
+bottom of page

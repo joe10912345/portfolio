@@ -1,0 +1,63 @@
+Wi-Fi 7 HGU/AP | Joel Chang Design
+top of page
+Works
+Defense
+Networking
+Electronics
+Lifestyle
+Industrial
+Experimental
+About
+Contact
+Ocean Series
+Wi-Fi 7
+HGU
+I
+AP
+A fresh perspective on router design &mdash;
+drawn from the organic elegance of sea anemones.
+To break free from the conventional boxy router design, I turned to the elegant, undulating forms of marine life for inspiration. Drawn from the sea anemone, this design introduces an eye-catching curvilinear silhouette and a signature "slim waist." By stripping away unnecessary decorative details, the result is a minimalist yet unforgettable, sculptural piece. Beyond aesthetics, the form is deeply rooted in UX principles &mdash; a thoughtfully arranged rear I/O layout makes the connection process intuitive for users, without compromising its vase-like elegance.
+Client
+Gemtek
+Year
+2023
+Designer
+Joel Chang
+Contribution
+Concept Development
+Industrial Design
+User Experience
+Color, Material and Finish
+Prototyping
+With Curvy,
+Slim Waist Outline.
+Design Spirit
+Inspired by the graceful form of a sea anemone, the design was shaped to feel soft, elegant, and vase-like. With a memorable yet neutral minimalist expression, it avoids unnecessary visual complexity. Subtle textural contrast and silver screen printing add a refined premium quality to the overall appearance.
+Inspired by sea ​​anemone
+The curved front panel, paired with a high-gloss polished finish, creates a captivating play of light and shadow. As ambient light shifts or users move past, the surface responds dynamically, highlighting the fluid and organic essence of the design.
+Aligning with modern interior aesthetics, the front UI was strategically distilled. By advocating for a cleaner user experience, the interface was reduced to its absolute essentials: just two subtle status indicators and a seamlessly integrated WPS button, eliminating unnecessary visual clutter.
+Flowing Surface & Light Reflection
+Minimal UI, Refined Experience
+"Form follows flow. The goal was to elevate a technical device into an elegant, vase-like centerpiece."
+Integrated Ventilation Detail
+The organic design language extends seamlessly to every functional element. Even the base incorporates wave-inspired ventilation details (Ocean series), ensuring that thermal management requirements enhance, rather than disrupt, the continuous, flowing silhouette.
+Optimizing Interaction &
+Spatial Efficiency
+UX-Driven Architecture
+Beyond aesthetic refinement, this design deeply considers the physical relationship between the device, the user, and the home environment. By leveraging Customer Journey Mapping (CJM), I identified critical hardware pain points in standard installation scenarios. This approach allows me to translate user-centric insights into practical, structural solutions, demonstrating a strong commitment to human-centered design.
+Seamless Wall Integration
+Built-in Cable Management
+for a Clutter-Free Setup
+Designed to harmonize beautifully with the router's sculptural form, the dedicated bracket creates a sophisticated, almost floating aesthetic on the wall. By incorporating a concealed cord management system at the bottom, it efficiently organizes cables and preserves a pristine, uninterrupted visual flow.
+Balancing High-Performance Thermals with Aesthetic Integrity
+Cross-Functional & Engineering Focus
+High-performance hardware demands rigorous thermal management. For the advanced Wi-Fi 7 SKUs, the design required structural evolution. Through iterative thermal simulations and engineering alignment, I refined the form factor&mdash;subtly elongating the vertical proportions and integrating refined venting details. The result is a high-capacity variant that stays remarkably true to the original design DNA.
+Organic, randomized ventilation pattern
+Prototyping & DFM Validation
+From Mockup to Production-Ready Design
+We worked closely with model suppliers to meticulously calibrate colors and select color samples that align with the ocean-inspired series. Through tight collaboration with mechanical engineers over multiple rounds of optimization, the part count was reduced and the overall structure was refined to improve manufacturability. Numerous issues were resolved along the way, from parting lines to assembly tolerances, driving continuous improvement and more complete solutions at every stage.
+ESG
+Packaging with Purpose
+Collaborated with the packaging design team to establish design standards centered on sustainability. The pulp boxes are made from plant fibers and wheat straw, printed with biodegradable soy-based ink on recycled paper. By streamlining the packaging structure, all materials can be fully recycled and reused, effectively reducing carbon emissions across the product lifecycle.
+© 2026 by Joel Chang. All rights reserved.
+bottom of page

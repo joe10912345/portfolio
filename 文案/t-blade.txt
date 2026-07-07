@@ -1,0 +1,68 @@
+══════════════════════════════════════════
+頁面：T. Blade
+檔案：t-blade.html
+══════════════════════════════════════════
+
+
+【圖 1】assets/images/t-blade/1e9c09_7319f0ff08dc4104901d18dd9da3ed71~mv2.jpg
+
+Switchblade Concept
+T. Blade
+Autonomous AI-powered drone, built for long-range reconnaissance and mission awareness.
+Designed for extended-range missions, T. Blade is an autonomous reconnaissance drone concept focused on aerial observation, area monitoring, and real-time intelligence gathering. Its lightweight, streamlined architecture supports agile deployment while enabling stable and efficient performance across complex operational environments.
+With AI-powered autonomy and seamless system integration, T. Blade helps teams expand surveillance reach, improve situational awareness, and respond faster to changing conditions—delivering a smarter approach to protecting critical spaces and maintaining mission visibility.
+Client
+Tron Future
+Year
+2025
+Designer
+Joel Chang
+Marcus Kung
+Contribution
+Concept Development
+Industrial Design
+Color, Material and Finish
+Prototyping
+
+【圖 2】assets/images/t-blade/1e9c09_8bac3b1ae31b4be3a9ecbe3f46f73fec~mv2.jpg
+
+Long-range surveillance across vast and complex terrain
+
+【圖 3】assets/images/t-blade/1e9c09_735623ae86fd4db091375061550c1f9d~mv2.png
+
+Compact Stowage Configuration
+Folded into a streamlined, tube-compatible form factor for rapid canister launch. The minimized cross-section allows dense packing and efficient storage across mobile and fixed deployment platforms.
+
+【圖 4】assets/images/t-blade/1e9c09_28b9f349b9304974a3532dc02645f352~mv2.png
+
+In-Flight Deployment Sequence
+Upon ejection, wings and tail fins deploy automatically, transitioning from a compact projectile into a fully stabilized fixed-wing platform — ready for autonomous reconnaissance within seconds of launch.
+
+【圖 5】assets/images/t-blade/1e9c09_4b183f8254274a798fd2190db3e619ff~mv2.png
+
+
+【圖 6】assets/images/t-blade/1e9c09_1509c92788614faca3e8760aca8a38e0~mv2.png
+
+
+【圖 7】assets/images/t-blade/1e9c09_ade6d4d3b5534a31b34e0406088d88ce~mv2.png
+
+Dual-Unit Launcher
+The launch platform houses two T. Blade units side by side, enabling consecutive deployment without reloading. An adjustable elevation mechanism allows operators to set the optimal launch angle based on terrain and mission profile — maximizing initial altitude gain and extending effective range from the moment of ejection.
+
+【圖 8】assets/images/t-blade/1e9c09_fb6200ee7b2a40c59bc4c4388ca2c24b~mv2.jpg
+
+
+【圖 9】assets/images/t-blade/1e9c09_21435779cadb4143adc7cf9e5ba3f6d4~mv2.jpg
+
+
+【圖 10】assets/images/t-blade/1e9c09_6c49ad0750504beeb8346e3f2c12a6f9~mv2.jpg
+
+
+【圖 11】assets/images/t-blade/1e9c09_bbe39854ba754288aa4fdf8e72889768~mv2.jpg
+
+
+【圖 12】assets/images/t-blade/1e9c09_2bd13254f41642ad9ec986994e2c0d47~mv2.jpg
+
+
+【圖 13】assets/images/t-blade/1e9c09_cd85db1e720b432ca1c0e28132560316~mv2.jpg
+

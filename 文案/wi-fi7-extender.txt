@@ -1,0 +1,107 @@
+══════════════════════════════════════════
+頁面：Wi-Fi 7 Extender
+檔案：wi-fi7-extender.html
+══════════════════════════════════════════
+
+
+【圖 1】assets/images/wi-fi7-extender/1e9c09_240bfe14cdf74c7c9e65db7abb11217c~mv2.jpg
+
+Ocean Series
+Wi-Fi 7 Extender
+Merging Organic Aesthetics with Ultra-Compact Engineering
+The Wi-Fi 7 extender introduces a distinctive biomimetic design language that creates a highly memorable visual identity. The primary challenge was maintaining this unique organic silhouette while meeting strict user experience and thermal requirements within an ultra-compact form factor. By navigating complex trade-offs in assembly mechanisms and heat dissipation alongside ME and thermal engineering teams, I successfully preserved the core ID concept. The project culminated in a successful partnership and deployment with a prominent Italian networking brand.
+Client
+Gemtek
+Year
+2023
+Designer
+Joel Chang
+Contribution
+Concept Development
+Industrial Design
+User Experience
+Color, Material and Finish
+Prototyping
+
+【圖 2】assets/images/wi-fi7-extender/1e9c09_fb8f419a0c9344bebdf6fbde25a19ad2~mv2.jpg
+
+Biomimetic Elegance
+A Memorable, Nature-Inspired Silhouette
+Drawing inspiration from the sleek, hydrodynamic profile of a cuttlefish, the enclosure features a distinct trapezoidal geometry softened by organic, rounded contours. This biomimetic approach replaces the rigid, utilitarian look of standard networking devices with fluid curves and refined surface treatments. The result is an ultra-compact product that is both striking in its uniqueness and naturally suited to modern interior spaces.
+Inspired by cuttlefish
+
+【圖 3】assets/images/wi-fi7-extender/1e9c09_c3fe498f46e74b889afec4cafb28796e~mv2.png
+
+Form Exploration & Refinement
+Iterative Evolution from Inspiration to Realization
+In the design process, we drew inspiration from the natural beauty of cuttlefish, embarking on a journey to explore the interplay between form and function. We continuously experimented with different shapes and surface transitions, striving to achieve a balance of visual harmony and dynamic energy.
+The surface transitions were meticulously crafted to convey a sense of fluidity, complemented by geometric segmentation that imbues the product with a modern, technological aesthetic while retaining the organic vitality of natural forms. The perforation design, as a key element, not only enhances visual depth and aesthetics but also underwent rigorous functional validation to ensure exceptional performance in ventilation and heat dissipation.
+
+【圖 4】assets/images/wi-fi7-extender/1e9c09_c30cea5f15844d8aa5a141d8e774d273~mv2.jpg
+
+
+【圖 5】assets/images/wi-fi7-extender/1e9c09_9ad3b2aadedc4e9287d5b7545e311723~mv2.png
+
+The Ultimate Compact Form
+Maximizing Aesthetic Value within Strict Hardware Constraints
+This design is built around a mass-produced PCB, which introduces significant constraints from the outset. Yet the primary goal remains uncompromised: achieving the most compact form factor possible. This demands exceptional precision in shaping and detailing, where every curve and surface must be carefully resolved. Close collaboration with mechanical engineers was critical to fine-tune component fit and tolerances, ensuring the final product honors the original industrial design intent while striking the right balance between functionality and aesthetics.
+
+【圖 6】assets/images/wi-fi7-extender/1e9c09_72b4bf703afa4dd499eb2a595f485b77~mv2.png
+
+
+【圖 7】assets/images/wi-fi7-extender/1e9c09_a544513dc3484ab387b7b2f8b67c6c4c~mv2.png
+
+Balance of ID and Functionality
+Airflow by Design, Not by Compromise
+Working closely with thermal engineers, I optimized airflow direction while keeping the front face clean and uninterrupted. Ventilation openings are strategically placed along the sides and back, maximizing the open area for heat dissipation without compromising the product's visual identity. The bottom of the back cover features a curved surface to increase airflow clearance, with a raised bump that serves a dual purpose: housing a rubber footpad and providing structural support to prevent sagging when the product is plugged into a lower socket.
+
+【圖 8】assets/images/wi-fi7-extender/1e9c09_336cf4f58f3e480187b7fffadd4b4d17~mv2.png
+
+Raised Bump for Air Intake
+A convex surface on the back shell creates clearance for fan airflow while doubling as a sturdy contact point, stabilizing the product when tilted by the socket angle.
+Anti-Sag Support
+Given the product's weight, relying solely on the socket for support risks gradual tilting over time. The integrated bump and rubber foot provide a secondary support point, ensuring stable, long-term installation.
+
+【圖 9】assets/images/wi-fi7-extender/1e9c09_4912f5c5e0734183894d3f5c6994b8b8~mv2.png
+
+
+【圖 10】assets/images/wi-fi7-extender/1e9c09_e6e348550d54420c971bd97de0faddd5~mv2.png
+
+Mockup Stage
+Setting the Color Standard
+During the initial ID phase of the Ocean series, I collaborated with vendors to define and lock down the golden sample for the series' signature color palette, establishing a reliable benchmark for all future production runs. In parallel, I worked with mechanical engineers to source recycled plastic samples from material suppliers, evaluating their visual and tactile qualities to ensure recycled materials could be seamlessly integrated into the final product without compromising the design intent.
+
+【圖 11】assets/images/wi-fi7-extender/1e9c09_650addb87b3e4ddf9970136c04ee934c~mv2.png
+
+
+【圖 12】assets/images/wi-fi7-extender/1e9c09_4f4f5a4ec0424083a29fd7fb3c59c04e~mv2.jpg
+
+Concept to Commercialization
+Bringing the Vision to Market with Adant
+Selected by Italian firm Adant to house their advanced mesh technology, this design successfully bridged the gap between initial concept and commercial reality. The resulting strategic partnership led to an official product launch, with the finalized design proudly featured as the centerpiece of their official marketing and promotional videos.
+
+【圖 13】assets/images/wi-fi7-extender/1e9c09_433dd6b7c799465799e7f809e8394d64~mv2.png
+
+X
+
+【圖 14】assets/images/wi-fi7-extender/1e9c09_3e28a48136a747afa63d9f7db1abb23c~mv2.jpg
+
+
+【圖 15】assets/images/wi-fi7-extender/1e9c09_cd7fbb8927234ae8843c11ed54cbe310~mv2.png
+
+Check the website
+
+【圖 16】assets/images/ocean-series/1e9c09_fbf2fde7ca9b48f5afd50a8550c7bbd2~mv2.png
+
+
+【圖 17】assets/images/wi-fi7-extender/1e9c09_f8c911460a6e4f3c9449a01b97fa8a88~mv2.jpg
+
+
+【圖 18】assets/images/wi-fi7-extender/1e9c09_dbeba226bacb433584a5b66cc85be317~mv2.jpg
+
+
+【圖 19】assets/images/wi-fi7-extender/1e9c09_0b47c69453a94683a0e3329f4e7a55ff~mv2.jpg
+
+
+【圖 20】assets/images/wi-fi7-extender/1e9c09_2705452094c34ab19a8db765f3a7038d~mv2.png
+

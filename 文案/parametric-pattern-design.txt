@@ -1,0 +1,105 @@
+══════════════════════════════════════════
+頁面：Parametric Pattern Design
+檔案：parametric-pattern-design.html
+══════════════════════════════════════════
+
+
+【圖 1】assets/images/parametric-pattern-design/1e9c09_09b15459f73c42958d38b8a93d97be23~mv2.png
+
+Parametric Pattern Design​​​​​​​
+Explore variations and enjoy the subtle differences.
+This was an experimental project I explored during my spare time at work, using Rhino Grasshopper to study parametric hole design and surface transformations. This technique can be directly applied to future design needs, enhancing both innovation and feasibility.
+Due to the cooling requirements of routers, a large number of ventilation holes need to be designed within a limited space, making hole pattern optimization a key challenge.
+To balance functionality and aesthetics, I proactively introduced a gradient-based parametric design, allowing for greater flexibility in hole arrangements while adding depth and intricate details to the product.
+Client
+Side Project
+Year
+2022-2025
+Designer
+Joel Chang
+Contribution
+Design
+Vent Hole Shape Variation Design
+
+【圖 2】assets/images/parametric-pattern-design/1e9c09_79091c3e8ecc4574b408dc22f0aad320~mv2.png
+
+Pattern studies for ventilation, texture, and surface expression.
+
+【圖 3】assets/images/parametric-pattern-design/1e9c09_05ae5e7abce84aa4b8b380a756eda0ea~mv2.png
+
+Customized Holes + Gradient + Position Distinction
+
+【圖 4】assets/images/parametric-pattern-design/1e9c09_720a9eccd1f54cc984ee70f572484fe7~mv2.png
+
+Radial Holes + Custom Displacement
+
+【圖 5】assets/images/parametric-pattern-design/1e9c09_c4c9a2ce7ac1494a8108b9add2337bba~mv2.png
+
+Custom Hole + Gradient + Projection Surface + Rotation
+
+【圖 6】assets/images/parametric-pattern-design/1e9c09_85d247e6b5624d5ca156838de0e61fd2~mv2.png
+
+Random Triangle Holes
+
+【圖 7】assets/images/parametric-pattern-design/1e9c09_15125414c60f4457b80bb6067aba4e58~mv2.png
+
+Custom Hole + Custom Position Shift Gradient
+
+【圖 8】assets/images/parametric-pattern-design/1e9c09_75b414a7b2844d5e982debdec002a7a6~mv2.png
+
+
+【圖 9】assets/images/parametric-pattern-design/1e9c09_4e6b98a870794238bf73f57e8af59269~mv2.png
+
+Gradient Hole + Line Interference
+
+【圖 10】assets/images/parametric-pattern-design/1e9c09_22c094a81638433e9bf26382a03fdceb~mv2.png
+
+Square to Circle Gradient
+
+【圖 11】assets/images/parametric-pattern-design/1e9c09_112a6c6a928e492fa5d5b0a8a4b26f10~mv2.png
+
+Sunflower Hole Array
+3D Surface Variation Design
+
+【圖 12】assets/images/parametric-pattern-design/1e9c09_84d1ed5fca124870bf57e6377364a05b~mv2.png
+
+3D Block Random Height Variation
+
+【圖 13】assets/images/parametric-pattern-design/1e9c09_4a60e7f02c7043f5b6650636042f6f83~mv2.png
+
+Gradual Fade Ripple
+
+【圖 14】assets/images/parametric-pattern-design/1e9c09_ad3a7f3b7f80425a8dbbb58ecb421c59~mv2.png
+
+Surface Segmentation
+
+【圖 15】assets/images/parametric-pattern-design/1e9c09_db76cc98fdae49fcb50d4a61e36c66fd~mv2.png
+
+Gradual Fade Random Ripple
+
+【圖 16】assets/images/parametric-pattern-design/1e9c09_fa37ca0412ad4e708d28d49156be55e6~mv2.png
+
+Lofting + Custom Displacement
+
+【圖 17】assets/images/parametric-pattern-design/1e9c09_2683a98783084871bee8414a454a76c3~mv2.png
+
+Wavy Cut Layered Panel
+
+【圖 18】assets/images/parametric-pattern-design/1e9c09_11483dfa1e6f489791d5612e0ae21030~mv2.png
+
+Ripple + Gradual Fade + Rotating Handle
+
+【圖 19】assets/images/parametric-pattern-design/1e9c09_d436ecda62554ee4a64f67e63813f0a4~mv2.png
+
+
+【圖 20】assets/images/parametric-pattern-design/1e9c09_5fe37ac84058457399f728893cd99cf7~mv2.png
+
+3D Diamond Surface + Gradual Fade Perforation
+
+【圖 21】assets/images/parametric-pattern-design/1e9c09_3b20dc3bab3044bbbc80efe70e6e5111~mv2.png
+
+Line Interference + Uplift
+
+【圖 22】assets/images/parametric-pattern-design/1e9c09_6d242f2d0dc04487aa2a80abe872eaf8~mv2.png
+
+Diamond Texture Gradual Fade
