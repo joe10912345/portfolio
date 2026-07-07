@@ -78,9 +78,20 @@ img{max-width:100%;display:block;height:auto}
   color:var(--text);font-size:clamp(1.25rem,2.6vw,1.6rem);font-weight:600;
   line-height:1.15;letter-spacing:-.01em}
 .flow h2{font-size:clamp(1.5rem,3.4vw,2.2rem);max-width:760px;margin:54px 0 8px}
-.flow figure{margin:26px auto;max-width:1080px;background:var(--tray);border:1px solid var(--hair);
+.flow figure{margin:26px 0;max-width:1080px;background:var(--tray);border:1px solid var(--hair);
   border-radius:var(--r-out);padding:6px}
 .flow figure img{border-radius:var(--r-in);width:100%}
+/* 可點的大圖入口（分類頁：點大圖進作品頁）*/
+.flow .figlink{display:block;position:relative;max-width:1080px;margin:26px 0;
+  background:var(--tray);border:1px solid var(--hair);border-radius:var(--r-out);padding:6px;
+  transition:transform .5s var(--ease),border-color .4s var(--ease)}
+.flow .figlink img{border-radius:var(--r-in);width:100%}
+.flow .figlink:hover{transform:translateY(-6px);border-color:rgba(0,163,255,.35)}
+.flow .figlink-go{position:absolute;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--hair-2);background:var(--glass);
+  backdrop-filter:blur(10px) saturate(1.3);-webkit-backdrop-filter:blur(10px) saturate(1.3);
+  display:grid;place-items:center;font-size:1rem;color:var(--text);transition:.4s var(--ease)}
+.flow .figlink:hover .figlink-go{background:var(--accent);color:var(--accent-ink);transform:rotate(-45deg)}
 
 /* ── 頁尾 ─────────────────────────────── */
 footer{border-top:1px solid var(--hair);padding:34px 0;display:flex;justify-content:space-between;
