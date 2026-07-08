@@ -26,11 +26,14 @@
 ============================================================ -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <style>
+@font-face{font-family:"Poppins";font-style:normal;font-weight:300;font-display:swap;src:url("assets/fonts/Poppins-Light.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/Poppins-Medium.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/Poppins-Medium.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/Poppins-SemiBold.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:700;font-display:swap;src:url("assets/fonts/Poppins-SemiBold.ttf") format("truetype")}
+
 /* ============================================================
    1. 主題設定 —— 想換顏色，只改這裡
       整站只用「單一點綴色」= 你的品牌電光藍
@@ -65,9 +68,9 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--bg);color:var(--text);
-  font-family:"Plus Jakarta Sans","Noto Sans TC",system-ui,-apple-system,"Microsoft JhengHei",sans-serif;
+  font-family:"Poppins","Noto Sans TC",system-ui,-apple-system,"Microsoft JhengHei",sans-serif;
   line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-h1,h2,h3,.display{font-family:"Clash Display","Noto Sans TC",system-ui,sans-serif;
+h1,h2,h3,.display{font-family:"Poppins","Noto Sans TC",system-ui,sans-serif;
   letter-spacing:-.02em;line-height:1.02;font-weight:600;text-wrap:balance}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
@@ -81,8 +84,8 @@ section{padding:clamp(90px,14vw,160px) 0;position:relative;z-index:2}
 a:focus:not(:focus-visible){outline:none}
 
 /* 技術微標籤（工程圖規格感）*/
-.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"IBM Plex Mono",monospace;
+.mono{font-family:"Poppins",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"Poppins",monospace;
   font-size:.7rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);
   border:1px solid var(--hair);background:var(--tray);border-radius:100px;padding:7px 15px}
 .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);
@@ -115,7 +118,7 @@ header.hidden{transform:translateY(-130%)}   /* 下捲時整個島藏到畫面�
   border:1px solid var(--hair);border-radius:100px;padding:13px 13px 13px 30px;
   box-shadow:0 1px 0 rgba(255,255,255,.05) inset, 0 18px 50px -20px rgba(0,0,0,.7);
   transition:gap .5s var(--ease),padding .5s var(--ease)}
-.nav-logo{font-family:"Clash Display",sans-serif;font-weight:600;font-size:1.02rem;letter-spacing:-.01em;
+.nav-logo{font-family:"Poppins",sans-serif;font-weight:600;font-size:1.02rem;letter-spacing:-.01em;
   white-space:nowrap;display:flex;align-items:center}
 .nav-logo span{color:var(--accent)}
 .nav-logo img{height:24px;width:auto}
@@ -150,7 +153,7 @@ body.menu-open .burger span:nth-child(2){transform:translateY(-4px) rotate(-45de
   display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;
   opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s}
 body.menu-open .overlay{opacity:1;visibility:visible}
-.overlay a{font-family:"Clash Display",sans-serif;font-size:clamp(2.2rem,9vw,4rem);font-weight:500;color:var(--text);
+.overlay a{font-family:"Poppins",sans-serif;font-size:clamp(2.2rem,9vw,4rem);font-weight:500;color:var(--text);
   opacity:0;transform:translateY(40px);transition:transform .6s var(--ease-out),opacity .6s var(--ease-out),color .3s}
 .overlay a:hover{color:var(--accent)}
 body.menu-open .overlay a{opacity:1;transform:none}
@@ -158,7 +161,7 @@ body.menu-open .overlay a:nth-child(1){transition-delay:.08s}
 body.menu-open .overlay a:nth-child(2){transition-delay:.14s}
 body.menu-open .overlay a:nth-child(3){transition-delay:.20s}
 body.menu-open .overlay a:nth-child(4){transition-delay:.26s}
-.overlay .om{margin-top:34px;font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.2em;
+.overlay .om{margin-top:34px;font-family:"Poppins",monospace;font-size:.78rem;letter-spacing:.2em;
   color:var(--faint);opacity:0;transition:opacity .5s .34s}
 body.menu-open .overlay .om{opacity:1}
 
@@ -192,7 +195,7 @@ body.menu-open .overlay .om{opacity:1}
 .hero p{max-width:600px;color:var(--muted);font-size:clamp(1.02rem,2.1vw,1.22rem)}
 .hero-cta{display:flex;gap:14px;margin-top:42px;flex-wrap:wrap}
 .scroll-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);color:var(--faint);
-  font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
+  font-family:"Poppins",monospace;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
   display:flex;flex-direction:column;align-items:center;gap:12px}
 .scroll-cue .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:fall 1.8s var(--ease) infinite}
 @keyframes fall{0%{transform:translateY(-9px);opacity:0}40%{opacity:1}100%{transform:translateY(15px);opacity:0}}
@@ -202,7 +205,7 @@ body.menu-open .overlay .om{opacity:1}
   background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);position:relative;z-index:2;
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
           mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.marquee-track{display:inline-flex;animation:scroll 32s linear infinite;font-family:"Clash Display",sans-serif;
+.marquee-track{display:inline-flex;animation:scroll 32s linear infinite;font-family:"Poppins",sans-serif;
   font-size:1.35rem;font-weight:500;color:var(--muted);will-change:transform}
 .marquee-track span{display:inline-flex;align-items:center;padding:0 34px;gap:34px}
 .marquee-track span::after{content:"✳";color:var(--accent);font-size:.9rem}
@@ -234,7 +237,7 @@ body.menu-open .overlay .om{opacity:1}
   margin-bottom:56px;flex-wrap:wrap}
 .section-head h2{font-size:clamp(2.1rem,5.2vw,3.6rem);margin-top:18px}
 .section-head .sub{color:var(--muted);max-width:380px;font-size:1rem}
-.idx{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--faint);letter-spacing:.2em}
+.idx{font-family:"Poppins",monospace;font-size:.72rem;color:var(--faint);letter-spacing:.2em}
 
 /* ============================================================
    8. 作品區 —— 不對稱 Bento + 雙層邊框卡片
@@ -260,13 +263,13 @@ body.menu-open .overlay .om{opacity:1}
 .card:hover .photo{transform:scale(1.06)}
 .card-thumb::after{content:"";position:absolute;inset:0;z-index:2;
   background:linear-gradient(180deg,transparent 40%,rgba(5,5,6,.55))}
-.card-num{position:absolute;top:16px;left:18px;z-index:3;font-family:"IBM Plex Mono",monospace;
+.card-num{position:absolute;top:16px;left:18px;z-index:3;font-family:"Poppins",monospace;
   font-size:.72rem;letter-spacing:.15em;color:var(--text);opacity:.85}
 .card-body{position:relative;z-index:3;padding:20px 22px 22px;display:flex;justify-content:space-between;
   align-items:flex-end;gap:14px;margin-top:-58px}
 .card-body h3{font-size:1.4rem;font-weight:600}
 .card.feature .card-body h3{font-size:1.9rem}
-.card-body .cat{color:var(--muted);font-size:.82rem;margin-top:4px;font-family:"IBM Plex Mono",monospace;letter-spacing:.08em}
+.card-body .cat{color:var(--muted);font-size:.82rem;margin-top:4px;font-family:"Poppins",monospace;letter-spacing:.08em}
 .card-arrow{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid var(--hair-2);
   background:rgba(255,255,255,.05);display:grid;place-items:center;
   transition:transform .5s var(--ease),background .4s var(--ease),color .4s var(--ease)}
@@ -288,7 +291,7 @@ body.menu-open .overlay .om{opacity:1}
 .stat:hover{border-color:rgba(0,163,255,.3);transform:translateY(-4px)}
 .stat-core{background:var(--core);border-radius:var(--r-in);padding:30px 24px;height:100%;
   box-shadow:inset 0 1px 1px rgba(255,255,255,.08)}
-.stat .n{font-family:"Clash Display",sans-serif;font-size:clamp(2.3rem,4.5vw,3.4rem);font-weight:600;color:var(--accent);
+.stat .n{font-family:"Poppins",sans-serif;font-size:clamp(2.3rem,4.5vw,3.4rem);font-weight:600;color:var(--accent);
   line-height:1;font-variant-numeric:tabular-nums}
 .stat .t{color:var(--muted);font-size:.85rem;margin-top:12px;line-height:1.4}
 
@@ -301,11 +304,11 @@ body.menu-open .overlay .om{opacity:1}
 .pillar:hover{border-color:rgba(0,163,255,.3);transform:translateY(-5px)}
 .pillar-core{background:var(--core);border-radius:var(--r-in);padding:40px 36px;height:100%;position:relative;
   overflow:hidden;box-shadow:inset 0 1px 1px rgba(255,255,255,.08)}
-.pillar .step{font-family:"IBM Plex Mono",monospace;color:var(--accent);font-size:.72rem;
+.pillar .step{font-family:"Poppins",monospace;color:var(--accent);font-size:.72rem;
   letter-spacing:.2em;text-transform:uppercase}
 .pillar h3{font-size:1.55rem;margin:16px 0 14px}
 .pillar p{color:var(--muted);font-size:1rem;position:relative;z-index:1}
-.pillar .ghost{position:absolute;right:-6px;bottom:-42px;font-family:"Clash Display",sans-serif;
+.pillar .ghost{position:absolute;right:-6px;bottom:-42px;font-family:"Poppins",sans-serif;
   font-weight:600;font-size:8rem;color:rgba(255,255,255,.028);z-index:0;line-height:1}
 
 /* ============================================================
@@ -316,7 +319,7 @@ body.menu-open .overlay .om{opacity:1}
 .about-text p{color:var(--muted);margin-bottom:18px;font-size:1.05rem}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .chip{border:1px solid var(--hair);background:var(--tray);border-radius:100px;padding:9px 17px;
-  font-size:.83rem;color:var(--text);font-family:"IBM Plex Mono",monospace;letter-spacing:.03em;
+  font-size:.83rem;color:var(--text);font-family:"Poppins",monospace;letter-spacing:.03em;
   transition:border-color .3s var(--ease),color .3s var(--ease)}
 .chip:hover{border-color:var(--accent);color:var(--accent)}
 /* 精密硬體感的視覺（雙層邊框 + 旋轉環）*/
@@ -330,9 +333,9 @@ body.menu-open .overlay .om{opacity:1}
 .about-visual .ring::after{content:"";position:absolute;inset:42%;border-radius:50%;
   border:1px dashed rgba(0,163,255,.5)}
 @keyframes spin{to{transform:rotate(360deg)}}
-.about-visual .tag{position:absolute;left:18px;bottom:16px;font-family:"IBM Plex Mono",monospace;
+.about-visual .tag{position:absolute;left:18px;bottom:16px;font-family:"Poppins",monospace;
   font-size:.68rem;letter-spacing:.12em;color:var(--faint)}
-.about-visual .corner{position:absolute;top:16px;right:18px;font-family:"IBM Plex Mono",monospace;
+.about-visual .corner{position:absolute;top:16px;right:18px;font-family:"Poppins",monospace;
   font-size:.66rem;color:var(--faint)}
 
 /* ============================================================
@@ -349,7 +352,7 @@ body.menu-open .overlay .om{opacity:1}
 .social:hover{border-color:var(--accent);color:var(--text);transform:translateY(-2px)}
 footer{border-top:1px solid var(--hair);padding:30px 0;display:flex;justify-content:space-between;
   color:var(--faint);font-size:.82rem;flex-wrap:wrap;gap:12px;position:relative;z-index:2;
-  font-family:"IBM Plex Mono",monospace;letter-spacing:.05em}
+  font-family:"Poppins",monospace;letter-spacing:.05em}
 
 /* ============================================================
    13. 進場動畫（捲到才淡入 + 位移 + 微模糊）

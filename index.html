@@ -13,9 +13,14 @@
 <!-- 字型（有網路時自動載入，看起來更好） -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <style>
+@font-face{font-family:"Poppins";font-style:normal;font-weight:300;font-display:swap;src:url("assets/fonts/Poppins-Light.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:400;font-display:swap;src:url("assets/fonts/Poppins-Medium.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:500;font-display:swap;src:url("assets/fonts/Poppins-Medium.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:600;font-display:swap;src:url("assets/fonts/Poppins-SemiBold.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-style:normal;font-weight:700;font-display:swap;src:url("assets/fonts/Poppins-SemiBold.ttf") format("truetype")}
+
 /* ============================================================
    1. 主題設定 —— 想換顏色，只改這裡
 ============================================================ */
@@ -38,9 +43,9 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);
-  font-family:"Inter","Noto Sans TC",system-ui,-apple-system,"Microsoft JhengHei",sans-serif;
+  font-family:"Poppins","Noto Sans TC",system-ui,-apple-system,"Microsoft JhengHei",sans-serif;
   line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.display{font-family:"Space Grotesk","Noto Sans TC",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05}
+h1,h2,h3,.display{font-family:"Poppins","Noto Sans TC",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 .wrap{width:min(92%,var(--max));margin-inline:auto}
@@ -67,7 +72,7 @@ header{position:fixed;top:0;left:0;width:100%;z-index:50;transition:.4s;border-b
 header.scrolled{background:rgba(10,10,12,.72);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
 header.hidden{transform:translateY(-100%)}   /* 下捲時整條藏起來 */
 nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0}
-.logo{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.15rem;display:flex;align-items:center}
+.logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;display:flex;align-items:center}
 .logo span{color:var(--accent)}
 .logo img{height:28px;width:auto}
 .nav-right{display:flex;align-items:center;gap:40px}
@@ -114,7 +119,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
 
 /* 跑馬燈（專長）*/
 .marquee{border-block:1px solid var(--line);padding:24px 0;overflow:hidden;white-space:nowrap;background:var(--surface)}
-.marquee-track{display:inline-flex;animation:scroll 26s linear infinite;font-family:"Space Grotesk",sans-serif;
+.marquee-track{display:inline-flex;animation:scroll 26s linear infinite;font-family:"Poppins",sans-serif;
   font-size:1.3rem;font-weight:600;color:var(--muted)}
 .marquee-track span{display:inline-flex;align-items:center;padding:0 40px;gap:40px}
 .marquee-track span::after{content:"✦";color:var(--accent)}
@@ -156,7 +161,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
 .card-thumb .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;
   transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .card:hover .photo{transform:scale(1.07)}
-.card-num{position:absolute;top:18px;left:20px;z-index:3;font-family:"Space Grotesk",sans-serif;
+.card-num{position:absolute;top:18px;left:20px;z-index:3;font-family:"Poppins",sans-serif;
   font-weight:700;font-size:.95rem;color:#fff;mix-blend-mode:difference}
 .card-body{padding:22px 24px 26px;display:flex;justify-content:space-between;align-items:center;gap:14px}
 .card-body h3{font-size:1.3rem;font-weight:600}
@@ -183,7 +188,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
 ============================================================ */
 .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);padding:56px 0}
-.stat .n{font-family:"Space Grotesk",sans-serif;font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;color:var(--accent)}
+.stat .n{font-family:"Poppins",sans-serif;font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;color:var(--accent)}
 .stat .t{color:var(--muted);font-size:.88rem;margin-top:8px;max-width:170px}
 
 /* ============================================================
@@ -193,11 +198,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
 .pillar{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
   padding:38px 34px;transition:.4s;position:relative;overflow:hidden}
 .pillar:hover{border-color:var(--accent);transform:translateY(-6px)}
-.pillar .step{font-family:"Space Grotesk",sans-serif;color:var(--accent);font-size:.8rem;
+.pillar .step{font-family:"Poppins",sans-serif;color:var(--accent);font-size:.8rem;
   font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .pillar h3{font-size:1.5rem;margin:14px 0 14px}
 .pillar p{color:var(--muted);font-size:1rem}
-.pillar .ghost{position:absolute;right:-10px;bottom:-30px;font-family:"Space Grotesk",sans-serif;
+.pillar .ghost{position:absolute;right:-10px;bottom:-30px;font-family:"Poppins",sans-serif;
   font-weight:700;font-size:7rem;color:var(--surface-2);z-index:0;line-height:1}
 .pillar .step,.pillar h3,.pillar p{position:relative;z-index:1}
 
