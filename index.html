@@ -99,6 +99,19 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
 .scroll-cue .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:fall 1.6s infinite}
 @keyframes fall{0%{transform:translateY(-8px);opacity:0}40%{opacity:1}100%{transform:translateY(14px);opacity:0}}
 
+/* 滿版 hero 圖（首頁最上方，往下才是文案）*/
+.hero-media{position:relative;height:100vh;min-height:520px;overflow:hidden;background:#05060a}
+.hero-media .hm-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;
+  transition:opacity 1.4s ease;will-change:opacity}
+.hero-media .hm-slide.on{opacity:1}
+.hero-media::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,rgba(5,6,10,.62),rgba(5,6,10,.05) 26%,rgba(5,6,10,0) 55%,rgba(5,6,10,.72))}
+.hm-cue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;color:var(--muted);
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:9px}
+.hm-cue .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);animation:fall 1.6s infinite}
+@media(max-width:820px){.hero-media{height:82vh;min-height:420px}}
+@media(prefers-reduced-motion:reduce){.hero-media .hm-slide{transition:none}}
+
 /* 跑馬燈（專長）*/
 .marquee{border-block:1px solid var(--line);padding:24px 0;overflow:hidden;white-space:nowrap;background:var(--surface)}
 .marquee-track{display:inline-flex;animation:scroll 26s linear infinite;font-family:"Space Grotesk",sans-serif;
@@ -266,8 +279,26 @@ footer{border-top:1px solid var(--line);padding:32px 0;display:flex;justify-cont
   </nav>
 </header>
 
+
+<!-- 滿版 hero 圖輪播（同 Wix 首頁）-->
+<section class="hero-media" id="top">
+  <img class="hm-slide on" loading="eager" src="assets/images/home/1e9c09_436d137e5fb54334b193b22ccec6974b~mv2.jpg" alt="Selected work">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_b6df4b7e39f64785b2963c670e3852eb~mv2.jpg" alt="" aria-hidden="true">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_3c2d36fcbde543cf8fc22986b4296b64~mv2.jpg" alt="" aria-hidden="true">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_f6619054456b4581a6aac77dc1e1a96b~mv2.jpg" alt="" aria-hidden="true">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_41c646833a4e4f93bad362a1274c575f~mv2.jpg" alt="" aria-hidden="true">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_e5d98527df1c434d970b36ae59d0f0e2~mv2.jpg" alt="" aria-hidden="true">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_6db46c56cb10482dbcbbfb3c0eaa6919~mv2.jpg" alt="" aria-hidden="true">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_a5fc0862968d49c39752ee9c288f5d39~mv2.jpg" alt="" aria-hidden="true">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_3d716e9f3c55459cba845bf0b0ed2067~mv2.jpg" alt="" aria-hidden="true">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_bfcccecfd44a41359ca76da0e537ad51~mv2.jpg" alt="" aria-hidden="true">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_cc76623ee983415c9ee2e4d41192e84d~mv2.jpg" alt="" aria-hidden="true">
+  <img class="hm-slide" loading="lazy" src="assets/images/home/1e9c09_1912939e7e5c4a78ae7b44e1400b2b9b~mv2.jpg" alt="" aria-hidden="true">
+  <div class="hm-cue"><span>Scroll</span><span class="dot"></span></div>
+</section>
+
 <!-- ===================== 首頁 Hero ===================== -->
-<section class="hero" id="top">
+<section class="hero">
   <div class="wrap">
     <div class="hero-eyebrow reveal">Joel Chang · Industrial Designer</div>
     <h1 class="reveal d1">Designing memorable<br>products through <span class="stroke">clarity</span><br>&amp; manufacturable beauty.</h1>
@@ -277,7 +308,6 @@ footer{border-top:1px solid var(--line);padding:32px 0;display:flex;justify-cont
       <a href="#contact" class="btn btn-ghost">Get in touch</a>
     </div>
   </div>
-  <div class="scroll-cue"><span>Scroll</span><span class="dot"></span></div>
 </section>
 
 <!-- ===================== 滿版相片庫跑馬燈（同舊站首頁輪播）===================== -->
@@ -605,6 +635,15 @@ navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ navLi
     var c=b.dataset.cat;
     cards.forEach(function(card){card.style.display=(c==='all'||card.dataset.cat===c)?'':'none';});
   });});
+})();
+</script>
+<script>
+/* 滿版 hero 圖自動輪播 */
+(function(){
+  var s=document.querySelectorAll('.hero-media .hm-slide');
+  if(s.length<2)return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var i=0;setInterval(function(){s[i].classList.remove('on');i=(i+1)%s.length;s[i].classList.add('on');},4800);
 })();
 </script>
 </body>
