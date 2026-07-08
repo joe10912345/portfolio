@@ -77,6 +77,8 @@ img{max-width:100%;display:block;height:auto}
 .flow .stack div:not(:first-child){font-family:"Clash Display","Noto Sans TC",system-ui,sans-serif;
   color:var(--text);font-size:clamp(1.25rem,2.6vw,1.6rem);font-weight:600;
   line-height:1.15;letter-spacing:-.01em}
+/* 圖片 + 其下方標題 = 一組（標題緊貼圖片，與下一張圖拉開距離）*/
+.flow figure+.stack,.flow .figlink+.stack{margin-top:10px}
 .flow h2{font-size:clamp(1.5rem,3.4vw,2.2rem);max-width:760px;margin:54px 0 8px}
 .flow figure{margin:26px 0;max-width:1080px;background:var(--tray);border:1px solid var(--hair);
   border-radius:var(--r-out);padding:6px}
