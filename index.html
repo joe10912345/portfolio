@@ -206,6 +206,26 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
   font-weight:700;font-size:7rem;color:var(--surface-2);z-index:0;line-height:1}
 .pillar .step,.pillar h3,.pillar p{position:relative;z-index:1}
 
+/* Design Approach（背景照片 + 置中標題 + 左側外框卡片，同 Wix）*/
+.approach2{position:relative;overflow:hidden;padding:110px 0}
+.approach2-bg{position:absolute;inset:0;z-index:0;background:#000 url("assets/images/home/home-7.jpg") no-repeat center right/cover}
+.approach2-in{position:relative;z-index:1}
+.approach2-title{text-align:center;font-weight:600;letter-spacing:-.02em;
+  font-size:clamp(2rem,5vw,3.4rem);margin-bottom:56px}
+.approach2-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px}
+.ap-card{border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:28px 30px;
+  background:rgba(8,8,10,.42);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
+  transition:.4s;min-height:230px}
+.ap-card:hover{border-color:rgba(255,255,255,.34);background:rgba(8,8,10,.55)}
+.ap-step{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.ap-card h3{font-size:clamp(1.15rem,1.9vw,1.5rem);font-weight:600;text-transform:uppercase;
+  line-height:1.15;margin-bottom:16px}
+.ap-card p{color:var(--muted);font-size:.92rem;font-weight:300;line-height:1.6}
+@media(max-width:820px){
+  .approach2-grid{grid-template-columns:1fr;max-width:none}
+  .approach2-bg{opacity:.22}
+}
+
 /* ============================================================
    8. 關於
 ============================================================ */
@@ -455,17 +475,15 @@ footer{border-top:1px solid var(--line);padding:32px 0;display:flex;justify-cont
 
 
 <!-- ===================== 設計方法論 ===================== -->
-<section id="approach">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div><div class="label">Design Approach</div><h2>How I work</h2></div>
-      <p>From real behaviors to buildable execution—every choice serves a clear purpose.</p>
-    </div>
-    <div class="approach-grid">
-      <div class="pillar reveal"><span class="ghost">01</span><div class="step">Discovery</div><h3>Clarity Through Insight</h3><p>Designing from real behaviors, not assumptions. Every design choice—form, flow, or detail—must serve a clear purpose and contribute to a coherent whole.</p></div>
-      <div class="pillar reveal d1"><span class="ghost">02</span><div class="step">Iteration</div><h3>Rapid Validation</h3><p>Hands-on prototyping is essential. Testing ideas quickly with physical models drives fast learning, continuous refinement, and stronger final outcomes.</p></div>
-      <div class="pillar reveal"><span class="ghost">03</span><div class="step">Realization</div><h3>Buildable Execution</h3><p>Design remains a concept until it survives engineering, cost, and manufacturing constraints. Close collaboration with cross-functional teams ensures products ship with structural integrity.</p></div>
-      <div class="pillar reveal d1"><span class="ghost">04</span><div class="step">Refinement</div><h3>Aesthetic Discipline</h3><p>Relentless attention to proportion, tension, and surface quality. Products that are visually calm, distinct, and memorable—without relying on fleeting trends.</p></div>
+<section id="approach" class="approach2">
+  <div class="approach2-bg" aria-hidden="true"></div>
+  <div class="wrap approach2-in">
+    <h2 class="approach2-title reveal">Design Approach</h2>
+    <div class="approach2-grid">
+      <div class="ap-card reveal"><div class="ap-step">Discovery</div><h3>Clarity Through Insight</h3><p>Designing from real behaviors, not assumptions. Every design choice—form, flow, or detail—must serve a clear purpose and contribute to a coherent whole.</p></div>
+      <div class="ap-card reveal d1"><div class="ap-step">Iteration</div><h3>Rapid Validation</h3><p>Hands-on prototyping is essential. Testing ideas quickly with physical models drives fast learning, continuous refinement, and stronger final outcomes.</p></div>
+      <div class="ap-card reveal"><div class="ap-step">Realization</div><h3>Buildable Execution</h3><p>Design remains a concept until it survives engineering, cost, and manufacturing constraints. Close collaboration with cross-functional teams ensures products ship with structural integrity.</p></div>
+      <div class="ap-card reveal d1"><div class="ap-step">Refinement</div><h3>Aesthetic Discipline</h3><p>Relentless attention to proportion, tension, and surface quality. The focus is on creating products that are visually calm, distinct, and memorable without relying on fleeting trends.</p></div>
     </div>
   </div>
 </section>
