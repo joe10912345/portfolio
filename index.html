@@ -229,12 +229,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
 /* Expertise 橫向滑動卡片（同 Wix）*/
 .expertise2{padding:100px 0}
 .exp-title{text-align:center;font-weight:600;letter-spacing:-.02em;font-size:clamp(2rem,5vw,3.4rem);margin-bottom:48px}
-.exp-scroll{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-  padding:0 max(4vw,calc((100vw - var(--max))/2)) 26px}
-.exp-scroll img{flex:none;width:min(82vw,400px);height:auto;border-radius:16px;border:1px solid var(--line);scroll-snap-align:start}
-.exp-scroll::-webkit-scrollbar{height:6px}
-.exp-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
-.exp-scroll::-webkit-scrollbar-track{background:transparent}
+.exp-marquee{overflow:hidden;width:100%}
+.exp-track{display:flex;gap:20px;width:max-content;animation:scroll 45s linear infinite}
+.exp-track img{height:min(64vw,460px);width:auto;border-radius:16px;border:1px solid var(--line)}
+.exp-marquee:hover .exp-track{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.exp-track{animation:none}.exp-marquee{overflow-x:auto}}
 
 /* ============================================================
    8. 關於
@@ -487,11 +486,17 @@ footer{border-top:1px solid var(--line);padding:32px 0;display:flex;justify-cont
 <!-- ===================== Expertise（橫向卡片，同 Wix）===================== -->
 <section id="expertise" class="expertise2">
   <div class="wrap"><h2 class="exp-title reveal">Expertise</h2></div>
-  <div class="exp-scroll reveal">
-    <img loading="lazy" src="assets/images/expertise/expertise-1.jpg" alt="Industrial Design">
-    <img loading="lazy" src="assets/images/expertise/expertise-2.jpg" alt="Rapid 2D Design">
-    <img loading="lazy" src="assets/images/expertise/expertise-3.jpg" alt="Solid 3D Modeling Skill">
-    <img loading="lazy" src="assets/images/expertise/expertise-4.jpg" alt="CMF Planning">
+  <div class="exp-marquee reveal">
+    <div class="exp-track">
+      <img loading="lazy" src="assets/images/expertise/expertise-1.jpg" alt="Industrial Design">
+      <img loading="lazy" src="assets/images/expertise/expertise-2.jpg" alt="Rapid 2D Design">
+      <img loading="lazy" src="assets/images/expertise/expertise-3.jpg" alt="Solid 3D Modeling Skill">
+      <img loading="lazy" src="assets/images/expertise/expertise-4.jpg" alt="CMF Planning">
+      <img loading="lazy" src="assets/images/expertise/expertise-1.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/expertise/expertise-2.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/expertise/expertise-3.jpg" alt="" aria-hidden="true">
+      <img loading="lazy" src="assets/images/expertise/expertise-4.jpg" alt="" aria-hidden="true">
+    </div>
   </div>
 </section>
 
