@@ -73,15 +73,16 @@ img{max-width:100%;display:block;height:auto}
 
 /* ── 作品內文（文字 + 圖片流）─────────── */
 .flow{padding:10px 0 90px}
-.flow p{color:var(--muted);font-size:1.04rem;max-width:760px;margin:22px 0}
-.flow .stack{max-width:760px;margin:26px 0 6px}
+.flow p{color:var(--muted);font-size:1.02rem;font-weight:300;max-width:760px;margin:22px 0}
+.flow .stack{max-width:760px;margin:30px 0 6px}
 .flow .stack div{color:var(--text);font-weight:500}
-.flow .stack div:first-child{font-family:"Poppins",monospace;font-size:.74rem;
-  letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
-/* 中間標題：白色、比內文大、用標題字體 */
+/* 小標：最小、藍色、字距寬、大寫 */
+.flow .stack div:first-child{font-family:"Poppins",sans-serif;font-size:.72rem;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+/* 中標：白色、明顯大於內文、SemiBold */
 .flow .stack div:not(:first-child){font-family:"Poppins","Noto Sans TC",system-ui,sans-serif;
-  color:var(--text);font-size:clamp(1.25rem,2.6vw,1.6rem);font-weight:600;
-  line-height:1.15;letter-spacing:-.01em}
+  color:var(--text);font-size:clamp(1.5rem,3.4vw,2.15rem);font-weight:600;
+  line-height:1.18;letter-spacing:-.015em}
 /* 圖片 + 其下方標題 = 一組（標題緊貼圖片，與下一張圖拉開距離）*/
 .flow figure+.stack,.flow .figlink+.stack{margin-top:10px}
 .flow h2{font-size:clamp(1.5rem,3.4vw,2.2rem);max-width:760px;margin:54px 0 8px}
