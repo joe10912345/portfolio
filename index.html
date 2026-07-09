@@ -229,11 +229,19 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
 /* Expertise 橫向滑動卡片（同 Wix）*/
 .expertise2{padding:100px 0}
 .exp-title{text-align:center;font-weight:600;letter-spacing:-.02em;font-size:clamp(2rem,5vw,3.4rem);margin-bottom:48px}
-.exp-marquee{overflow:hidden;width:100%}
-.exp-track{display:flex;gap:20px;width:max-content;animation:scroll 45s linear infinite}
-.exp-track img{height:min(64vw,460px);width:auto;border-radius:16px;border:1px solid var(--line)}
-.exp-marquee:hover .exp-track{animation-play-state:paused}
-@media(prefers-reduced-motion:reduce){.exp-track{animation:none}.exp-marquee{overflow-x:auto}}
+.exp-scroll{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+  padding:0 max(4vw,calc((100vw - var(--max))/2)) 26px}
+.exp-card{position:relative;flex:none;width:min(78vw,360px);border-radius:16px;overflow:hidden;
+  border:1px solid var(--line);scroll-snap-align:start}
+.exp-card img{width:100%;height:auto;display:block}
+.exp-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;
+  background:linear-gradient(to top,rgba(5,5,8,.95),rgba(5,5,8,.8));opacity:0;transition:opacity .4s}
+.exp-card:hover .exp-ov{opacity:1}
+.exp-ov .lbl{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.exp-ov h3{font-size:1.5rem;font-weight:600;margin-bottom:14px}
+.exp-ov p{color:var(--muted);font-size:.92rem;font-weight:300;line-height:1.65}
+.exp-scroll::-webkit-scrollbar{height:6px}
+.exp-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
 
 /* ============================================================
    8. 關於
@@ -486,17 +494,18 @@ footer{border-top:1px solid var(--line);padding:32px 0;display:flex;justify-cont
 <!-- ===================== Expertise（橫向卡片，同 Wix）===================== -->
 <section id="expertise" class="expertise2">
   <div class="wrap"><h2 class="exp-title reveal">Expertise</h2></div>
-  <div class="exp-marquee reveal">
-    <div class="exp-track">
-      <img loading="lazy" src="assets/images/expertise/expertise-1.jpg" alt="Industrial Design">
-      <img loading="lazy" src="assets/images/expertise/expertise-2.jpg" alt="Rapid 2D Design">
-      <img loading="lazy" src="assets/images/expertise/expertise-3.jpg" alt="Solid 3D Modeling Skill">
-      <img loading="lazy" src="assets/images/expertise/expertise-4.jpg" alt="CMF Planning">
-      <img loading="lazy" src="assets/images/expertise/expertise-1.jpg" alt="" aria-hidden="true">
-      <img loading="lazy" src="assets/images/expertise/expertise-2.jpg" alt="" aria-hidden="true">
-      <img loading="lazy" src="assets/images/expertise/expertise-3.jpg" alt="" aria-hidden="true">
-      <img loading="lazy" src="assets/images/expertise/expertise-4.jpg" alt="" aria-hidden="true">
-    </div>
+  <div class="exp-scroll reveal">
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-1.jpg" alt="Design Research"><div class="exp-ov"><div class="lbl">Expertise</div><h3>Design Research</h3><p>Placeholder — uncovering user needs and market context to ground every design decision.</p></div></div>
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-2.jpg" alt="User Research"><div class="exp-ov"><div class="lbl">Expertise</div><h3>User Research</h3><p>Placeholder — interviews, observation, and synthesis that reveal what people truly value.</p></div></div>
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-3.jpg" alt="Concept Development"><div class="exp-ov"><div class="lbl">Expertise</div><h3>Concept Development</h3><p>Placeholder — exploring divergent directions before converging on the strongest idea.</p></div></div>
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-4.jpg" alt="Design Validation"><div class="exp-ov"><div class="lbl">Expertise</div><h3>Design Validation</h3><p>Placeholder — testing concepts against real behaviors to de-risk the direction early.</p></div></div>
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-5.jpg" alt="Solid 3D Modeling"><div class="exp-ov"><div class="lbl">Expertise</div><h3>Solid 3D Modeling</h3><p>Placeholder — precise, production-minded CAD that speeds iteration and vendor coordination.</p></div></div>
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-6.png" alt="Prototyping"><div class="exp-ov"><div class="lbl">Expertise</div><h3>Prototyping</h3><p>Placeholder — fast physical models that turn ideas into things you can hold and test.</p></div></div>
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-7.jpg" alt="Industrial Design"><div class="exp-ov"><div class="lbl">Expertise</div><h3>Industrial Design</h3><p>Placeholder — distinctive, manufacturable product form with a clear point of view.</p></div></div>
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-8.jpg" alt="Rapid 2D Design"><div class="exp-ov"><div class="lbl">Expertise</div><h3>Rapid 2D Design</h3><p>Placeholder — quick visual proposals that align stakeholders before 3D development.</p></div></div>
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-9.jpg" alt="Production Inspection"><div class="exp-ov"><div class="lbl">Expertise</div><h3>Production Inspection</h3><p>Placeholder — hands-on quality checks that ensure parts ship with integrity.</p></div></div>
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-10.jpg" alt="CMF Design"><div class="exp-ov"><div class="lbl">Expertise</div><h3>CMF Design</h3><p>Placeholder — color, material, and finish choices that give products perceived value.</p></div></div>
+    <div class="exp-card"><img loading="lazy" src="assets/images/expertise/expertise-11.jpg" alt="Production Ready"><div class="exp-ov"><div class="lbl">Expertise</div><h3>Production Ready</h3><p>Placeholder — refined execution that survives cost, tooling, and manufacturing constraints.</p></div></div>
   </div>
 </section>
 
