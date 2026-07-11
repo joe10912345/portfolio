@@ -13,11 +13,13 @@
 /* ── About 專用結構化版面 ───────────────────── */
 .ab{padding:70px 0 40px}
 .ab section{margin:64px 0}
-.ab .eyebrow{font-family:"Poppins",monospace;font-size:.72rem;letter-spacing:.22em;
+.ab .eyebrow{font-family:"Poppins",monospace;font-size:var(--fs-eyebrow);letter-spacing:.22em;
   text-transform:uppercase;color:var(--accent);margin-bottom:20px}
 .ab h2.sec{font-family:"Poppins",sans-serif;font-weight:600;letter-spacing:-.02em;
-  font-size:clamp(1.7rem,4vw,2.6rem);margin-bottom:8px}
-.ab h2.sec.center{text-align:center;margin-bottom:40px}
+  font-size:var(--fs-title);margin-bottom:24px;position:relative;padding-top:20px}
+.ab h2.sec::before{content:"";position:absolute;top:0;left:0;width:34px;height:2px;background:var(--accent)}
+.ab h2.sec.center{text-align:center;margin-bottom:40px;padding-top:24px}
+.ab h2.sec.center::before{left:50%;transform:translateX(-50%)}
 
 /* Hero */
 .ab-hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:10px}
@@ -28,9 +30,9 @@
   font-family:"Poppins",monospace;font-size:.8rem;letter-spacing:.12em;color:var(--muted)}
 .ab-tags span{color:var(--text)}
 .ab-name{font-family:"Poppins",sans-serif;font-weight:600;line-height:1;
-  font-size:clamp(2.6rem,7vw,5rem);letter-spacing:-.02em}
+  font-size:clamp(2.6rem,7vw,4.6rem);letter-spacing:-.02em}
 .ab-name .sm{font-size:.32em;font-weight:500;color:var(--muted);letter-spacing:0;margin-left:.4em;vertical-align:.9em}
-.ab-bio{color:var(--muted);font-size:1.02rem;line-height:1.75;margin-top:26px;max-width:52ch}
+.ab-bio{color:var(--muted);font-size:var(--fs-lead);font-weight:300;line-height:1.8;margin-top:26px;max-width:56ch}
 .ab-bio p+p{margin-top:16px}
 .ab-sign{margin-top:28px;height:64px;width:auto;opacity:.92}
 
@@ -38,45 +40,45 @@
 .ab-cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
 .ab-list{margin-top:26px;display:flex;flex-direction:column;gap:22px}
 .ab-row{display:grid;grid-template-columns:120px 1fr;gap:18px}
-.ab-row .when{color:var(--faint);font-family:"Poppins",monospace;font-size:.8rem;padding-top:3px}
-.ab-row .what b{display:block;font-weight:600;font-size:1.02rem}
-.ab-row .what span{display:block;color:var(--muted);font-size:.92rem;margin-top:2px}
+.ab-row .when{color:var(--faint);font-family:"Poppins",monospace;font-size:var(--fs-meta);padding-top:3px}
+.ab-row .what b{display:block;font-weight:600;font-size:1rem}
+.ab-row .what span{display:block;color:var(--muted);font-size:var(--fs-caption);font-weight:300;margin-top:2px}
 .ab-row .what em{font-style:normal;color:var(--accent)}
 
 /* Languages */
 .ab-langs{display:flex;gap:56px;margin-top:24px;flex-wrap:wrap}
-.ab-langs div b{display:block;font-weight:600}
-.ab-langs div span{color:var(--muted);font-size:.9rem}
+.ab-langs div b{display:block;font-weight:600;font-size:1rem}
+.ab-langs div span{color:var(--muted);font-size:var(--fs-caption)}
 
 /* Capability */
 .ab-cap{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .ab-card{border:1px solid var(--hair);border-radius:var(--r-in);padding:26px 28px;background:var(--tray)}
-.ab-card h3{font-size:1.15rem;font-weight:600;margin-bottom:14px}
+.ab-card h3{font-size:var(--fs-title-sm);font-weight:600;margin-bottom:14px}
 .ab-card ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.ab-card li{color:var(--muted);position:relative;padding-left:18px}
+.ab-card li{color:var(--muted);font-size:.94rem;font-weight:300;position:relative;padding-left:18px}
 .ab-card li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--accent)}
 .ab-tools{grid-column:1 / -1;border:1px solid var(--hair);border-radius:var(--r-in);padding:26px 28px 30px;background:var(--tray)}
-.ab-tools h3{text-align:center;font-size:1.15rem;font-weight:600;margin-bottom:18px}
+.ab-tools h3{text-align:center;font-size:var(--fs-title-sm);font-weight:600;margin-bottom:18px}
 .ab-tools img{width:100%;max-width:900px;margin:0 auto;display:block}
 
 /* Collaboration */
-.ab-sub{color:var(--muted);max-width:60ch;margin-bottom:32px}
+.ab-sub{color:var(--muted);font-size:var(--fs-lead);font-weight:300;line-height:1.7;max-width:60ch;margin-bottom:32px}
 .ab-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .ab-photos figure{margin:0}
 .ab-photos img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:0;border:1px solid var(--hair)}
-.ab-photos figcaption{color:var(--muted);font-size:.85rem;margin-top:10px}
+.ab-photos figcaption{color:var(--muted);font-size:var(--fs-caption);margin-top:10px}
 
 /* Testimonials */
 .ab-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
 .ab-quote{border:1px solid var(--hair);border-radius:var(--r-in);padding:26px 26px 22px;
   background:var(--tray);display:flex;flex-direction:column}
 .ab-quote .mark{color:var(--accent);font-family:"Poppins",serif;font-size:2.4rem;line-height:.6;height:22px}
-.ab-quote p{color:var(--muted);font-size:.9rem;line-height:1.65;margin:14px 0 20px;flex:1}
+.ab-quote p{color:var(--muted);font-size:.94rem;font-weight:300;line-height:1.7;margin:14px 0 20px;flex:1}
 .ab-who{display:flex;align-items:center;gap:12px;border-top:1px solid var(--hair);padding-top:16px}
 .ab-av{width:40px;height:40px;flex:none;border-radius:50%;display:grid;place-items:center;
   background:rgba(0,163,255,.14);color:var(--accent);font-weight:600;font-size:.85rem}
 .ab-who b{display:block;font-size:.9rem;font-weight:600}
-.ab-who span{display:block;color:var(--faint);font-size:.76rem;margin-top:1px}
+.ab-who span{display:block;color:var(--faint);font-size:var(--fs-meta);margin-top:1px}
 
 /* Closing */
 .ab-close img{width:100%;border-radius:0;filter:grayscale(1);border:1px solid var(--hair)}
