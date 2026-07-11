@@ -65,7 +65,7 @@ section{padding:160px 0}
 section:not(#approach){position:relative;z-index:2}
 /* 跨類別大圖（置中、不滿版、限內容寬度）*/
 .crossimg{margin-top:46px}
-.crossimg img{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line)}
+.crossimg img{width:100%;height:auto;display:block}
 
 /* 頂端捲動進度條 */
 .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:100;
@@ -235,7 +235,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
 /* Expertise 橫向滑動卡片（同 Wix）*/
 .expertise2{padding:180px 0}
 .exp-title{text-align:center;font-weight:600;letter-spacing:-.02em;font-size:clamp(2rem,5vw,3.4rem);margin-bottom:48px}
-.exp-wrap{position:relative;max-width:var(--max);margin:0 auto;padding:0 clamp(16px,4vw,44px)}
+.exp-wrap{position:relative;width:min(94%,2200px);margin:0 auto;padding:0 clamp(16px,3vw,40px)}
 .exp-scroll{display:flex;gap:20px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;
   -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
 .exp-scroll::-webkit-scrollbar{display:none}
