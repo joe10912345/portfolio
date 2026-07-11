@@ -23,7 +23,7 @@
 .ab-hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:10px}
 .ab-photo{position:relative}
 .ab-photo .orb{position:absolute;inset:-14% -10% -14% -10%;z-index:0;pointer-events:none;opacity:.9}
-.ab-photo .shot{position:relative;z-index:1;border-radius:16px;width:100%}
+.ab-photo .shot{position:relative;z-index:1;border-radius:0;width:100%}
 .ab-tags{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;
   font-family:"Poppins",monospace;font-size:.8rem;letter-spacing:.12em;color:var(--muted)}
 .ab-tags span{color:var(--text)}
@@ -63,7 +63,7 @@
 .ab-sub{color:var(--muted);max-width:60ch;margin-bottom:32px}
 .ab-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .ab-photos figure{margin:0}
-.ab-photos img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--hair)}
+.ab-photos img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:0;border:1px solid var(--hair)}
 .ab-photos figcaption{color:var(--muted);font-size:.85rem;margin-top:10px}
 
 /* Testimonials */
@@ -79,7 +79,7 @@
 .ab-who span{display:block;color:var(--faint);font-size:.76rem;margin-top:1px}
 
 /* Closing */
-.ab-close img{width:100%;border-radius:16px;filter:grayscale(1);border:1px solid var(--hair)}
+.ab-close img{width:100%;border-radius:0;filter:grayscale(1);border:1px solid var(--hair)}
 
 @media(max-width:820px){
   .ab-hero,.ab-cols,.ab-cap{grid-template-columns:1fr;gap:32px}

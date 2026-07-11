@@ -33,7 +33,7 @@
   --accent:    #00A3FF;   /* 主題點綴色（電光藍）← 換成你喜歡的顏色 */
   --accent-2:  #6d7dff;   /* 第二點綴色（藍紫）*/
   --line:      rgba(255,255,255,.08);
-  --radius:    18px;
+  --radius:    0px;
   --max:       1200px;
 }
 
@@ -134,13 +134,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
 /* 滿版相片庫跑馬燈（首頁頂部） */
 .photo-marquee{overflow:hidden;width:100%;padding:18px 0;background:var(--surface)}
 .photo-track{display:flex;width:max-content;animation:scroll 48s linear infinite}
-.photo-track img{height:min(48vw,380px);width:auto;object-fit:cover;border-radius:14px;margin-right:14px}
+.photo-track img{height:min(48vw,380px);width:auto;object-fit:cover;border-radius:0;margin-right:14px}
 .photo-marquee:hover .photo-track{animation-play-state:paused}
 
 /* Expertise 能力卡跑馬燈 */
 .skill-marquee{overflow:hidden;width:100%;margin-top:36px}
 .skill-track{display:flex;width:max-content;animation:scroll 70s linear infinite}
-.skill-track img{height:min(60vw,320px);width:auto;border-radius:14px;margin-right:14px}
+.skill-track img{height:min(60vw,320px);width:auto;border-radius:0;margin-right:14px}
 .skill-marquee:hover .skill-track{animation-play-state:paused}
 
 /* 客戶 logo 牆 */
@@ -219,7 +219,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
 .approach2-title{text-align:center;font-weight:600;letter-spacing:-.02em;
   font-size:clamp(2rem,5vw,3.4rem);margin-bottom:56px}
 .approach2-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:760px}
-.ap-card{border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:28px 30px;
+.ap-card{border:1px solid rgba(255,255,255,.18);border-radius:0;padding:28px 30px;
   background:rgba(8,8,10,.42);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);
   transition:.4s;min-height:230px}
 .ap-card:hover{border-color:rgba(255,255,255,.34);background:rgba(8,8,10,.55)}
@@ -240,7 +240,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0
   -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px}
 .exp-scroll::-webkit-scrollbar{display:none}
 .exp-card{position:relative;flex:0 0 calc((100% - 60px)/3.5);aspect-ratio:1/1;
-  border-radius:16px;overflow:hidden;border:1px solid var(--line);scroll-snap-align:start}
+  border-radius:0;overflow:hidden;border:1px solid var(--line);scroll-snap-align:start}
 .exp-card img{width:100%;height:100%;object-fit:cover;display:block}
 .exp-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:30px;
   background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.42));opacity:0;transition:opacity .4s}

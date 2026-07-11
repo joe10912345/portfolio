@@ -15,7 +15,7 @@
   --accent:#00A3FF; --accent-ink:#0a0a0c;
   --hair:rgba(255,255,255,.08); --hair-2:rgba(255,255,255,.14);
   --glass:rgba(12,12,16,.62);
-  --r-out:26px; --r-in:20px; --max:1080px;
+  --r-out:0px; --r-in:0px; --max:1080px;
   --ease:cubic-bezier(.22,.68,0,1); --ease-out:cubic-bezier(.16,1,.3,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
