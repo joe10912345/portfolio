@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Joel Chang — Industrial Designer (V2)</title>
+<meta name="description" content="Industrial designer Joel Chang. Clarity, crafted aesthetics, manufacturable beauty." />
+<style>
+@font-face{font-family:"Poppins";font-weight:300;font-display:swap;src:url("assets/fonts/Poppins-Light.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-weight:400;font-display:swap;src:url("assets/fonts/Poppins-Medium.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-weight:500;font-display:swap;src:url("assets/fonts/Poppins-Medium.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-weight:600;font-display:swap;src:url("assets/fonts/Poppins-SemiBold.ttf") format("truetype")}
+@font-face{font-family:"Poppins";font-weight:700;font-display:swap;src:url("assets/fonts/Poppins-SemiBold.ttf") format("truetype")}
+
+:root{
+  --bg:#050506; --ink:#f6f6f7; --muted:#86868f; --faint:#5a5a62;
+  --accent:#00A3FF; --line:rgba(255,255,255,.10); --line-2:rgba(255,255,255,.06);
+  --ease:cubic-bezier(.16,1,.3,1); --spring:cubic-bezier(.32,.72,0,1); --max:1400px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Poppins",system-ui,"Microsoft JhengHei",sans-serif;
+  line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--accent);color:#04121c}
+.wrap{width:min(92%,var(--max));margin-inline:auto}
+
+/* 固定質感層 */
+.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.glow{position:fixed;width:640px;height:640px;border-radius:50%;pointer-events:none;z-index:0;opacity:0;
+  transform:translate(-50%,-50%);transition:opacity .5s var(--ease);
+  background:radial-gradient(circle,rgba(0,163,255,.16),transparent 62%)}
+
+/* 浮動玻璃膠囊導覽 */
+.nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:40;display:flex;align-items:center;gap:26px;
+  padding:11px 12px 11px 24px;border-radius:100px;border:1px solid var(--line);
+  background:rgba(12,12,14,.6);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4)}
+.nav .brand{font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav .brand span{color:var(--accent)}
+.nav .links{display:flex;gap:22px;font-size:.82rem;color:var(--muted);font-weight:500}
+.nav .links a{transition:color .3s var(--ease)}
+.nav .links a:hover{color:var(--ink)}
+.nav .cta{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#04121c;
+  font-weight:600;font-size:.82rem;padding:8px 8px 8px 18px;border-radius:100px;transition:transform .4s var(--spring)}
+.nav .cta .ic{width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.16);display:grid;place-items:center;
+  transition:transform .4s var(--spring)}
+.nav .cta:hover{transform:scale(.98)}
+.nav .cta:hover .ic{transform:translate(2px,-2px)}
+@media(max-width:720px){.nav .links{display:none}}
+
+/* HERO：巨型排版 */
+.hero{position:relative;z-index:1;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;
+  padding:150px 0 60px}
+.tag{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:100px;
+  padding:7px 15px;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:500;
+  width:max-content}
+.tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 12px var(--accent)}
+.hero h1{margin-top:34px;font-weight:700;letter-spacing:-.045em;line-height:.92;
+  font-size:clamp(3rem,11.5vw,11rem);text-transform:uppercase}
+.hero h1 .o{color:transparent;-webkit-text-stroke:1.4px var(--ink)}
+.hero h1 .a{color:var(--accent);-webkit-text-stroke:0}
+.hero-foot{margin-top:48px;display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
+.hero-foot p{max-width:440px;color:var(--muted);font-size:clamp(1rem,1.4vw,1.12rem);font-weight:300;line-height:1.7}
+.hero-foot .scroll{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);
+  display:flex;align-items:center;gap:10px}
+.hero-foot .scroll::after{content:"";width:52px;height:1px;background:var(--line);position:relative;overflow:hidden}
+
+/* 類別跑馬燈 */
+.marquee{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:20px 0;position:relative;z-index:1}
+.mq-track{display:inline-flex;gap:0;animation:mq 32s linear infinite;will-change:transform}
+.mq-track span{font-size:clamp(1.4rem,3vw,2.4rem);font-weight:600;letter-spacing:-.02em;padding:0 34px;
+  display:inline-flex;align-items:center;gap:34px;color:var(--ink)}
+.mq-track span::after{content:"✳";color:var(--accent);font-size:.7em}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.mq-track{animation:none}}
+
+/* 區塊標頭 */
+section{position:relative;z-index:1}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap;
+  padding:110px 0 44px}
+.sec-head .idx{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.sec-head h2{font-size:clamp(2rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1}
+.sec-head p{max-width:320px;color:var(--muted);font-size:.95rem;font-weight:300}
+
+/* 作品：編輯式懸停浮圖清單 */
+.idx-list{border-top:1px solid var(--line)}
+.idx-row{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:20px;
+  padding:26px 8px;border-bottom:1px solid var(--line);position:relative;transition:padding .5s var(--ease)}
+.idx-row .num{font-size:.8rem;color:var(--faint);font-weight:500}
+.idx-row .name{font-size:clamp(1.5rem,3.6vw,2.9rem);font-weight:600;letter-spacing:-.02em;
+  transition:transform .5s var(--spring),color .4s var(--ease);color:var(--ink)}
+.idx-row .cat{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.idx-row::after{content:"↗";position:absolute;right:8px;top:50%;transform:translateY(-50%) scale(.4);opacity:0;
+  color:var(--accent);font-size:1.4rem;transition:.45s var(--spring)}
+.idx-row:hover{padding-left:26px}
+.idx-row:hover .name{transform:translateX(6px);color:#fff}
+.idx-row:hover .cat{opacity:0}
+.idx-row:hover::after{opacity:1;transform:translateY(-50%) scale(1)}
+.idx-preview{position:fixed;top:0;left:0;width:300px;height:220px;pointer-events:none;z-index:30;opacity:0;
+  transform:translate(-50%,-50%) scale(.92);overflow:hidden;
+  transition:opacity .4s var(--ease),transform .4s var(--spring)}
+.idx-preview img{width:100%;height:100%;object-fit:cover}
+.idx-preview.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+@media(max-width:720px){
+  .idx-row{grid-template-columns:40px 1fr;padding:20px 4px}
+  .idx-row .cat{display:none}.idx-preview{display:none}
+}
+
+/* 數據 */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;padding:40px 0 10px;border-top:1px solid var(--line)}
+.stat .n{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700;letter-spacing:-.03em;line-height:1}
+.stat .n .u{color:var(--accent)}
+.stat .t{margin-top:12px;color:var(--muted);font-size:.82rem;font-weight:300;max-width:150px}
+@media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr);gap:36px 20px}}
+
+/* 方法論 */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-bottom:20px}
+.pillar{border:1px solid var(--line);border-radius:2px;padding:30px 26px 40px;background:rgba(255,255,255,.015);
+  min-height:230px;display:flex;flex-direction:column;justify-content:space-between;transition:.5s var(--ease)}
+.pillar:hover{background:rgba(0,163,255,.05);border-color:rgba(0,163,255,.3)}
+.pillar .p-n{font-size:.72rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.pillar h3{font-size:1.3rem;font-weight:600;letter-spacing:-.01em}
+.pillar p{color:var(--muted);font-size:.85rem;font-weight:300;line-height:1.6;margin-top:10px}
+@media(max-width:820px){.pillars{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pillars{grid-template-columns:1fr}}
+
+/* CTA / 頁尾 */
+.cta-sec{padding:150px 0 90px;text-align:center}
+.cta-sec h2{font-size:clamp(2.6rem,9vw,8rem);font-weight:700;letter-spacing:-.045em;line-height:.94;text-transform:uppercase}
+.cta-sec h2 .o{color:transparent;-webkit-text-stroke:1.2px var(--ink)}
+.cta-mail{display:inline-flex;align-items:center;gap:14px;margin-top:44px;background:var(--accent);color:#04121c;
+  font-weight:600;font-size:1.05rem;padding:15px 16px 15px 30px;border-radius:100px;transition:transform .4s var(--spring)}
+.cta-mail .ic{width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.18);display:grid;place-items:center;
+  transition:transform .4s var(--spring)}
+.cta-mail:hover{transform:scale(.98)}
+.cta-mail:hover .ic{transform:translate(3px,-3px)}
+footer{border-top:1px solid var(--line);padding:34px 0;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  color:var(--faint);font-size:.78rem;letter-spacing:.04em}
+footer a{color:var(--muted)}footer a:hover{color:var(--ink)}
+footer .fl{display:flex;gap:22px}
+
+/* 進場 */
+.rv{opacity:0;transform:translateY(40px);filter:blur(6px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.rv.in{opacity:1;transform:none;filter:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none}.glow{display:none}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="glow" id="glow"></div>
+
+<nav class="nav">
+  <div class="brand">JOEL CHANG<span>.</span></div>
+  <div class="links">
+    <a href="#work">Work</a>
+    <a href="#approach">Approach</a>
+    <a href="about.html">About</a>
+  </div>
+  <a class="cta" href="contact.html">Get in touch<span class="ic">↗</span></a>
+</nav>
+
+<header class="hero wrap">
+  <div class="tag rv">Industrial Designer · Portfolio 2026</div>
+  <h1 class="rv">Clarity<br><span class="o">crafted</span><br>into <span class="a">form.</span></h1>
+  <div class="hero-foot">
+    <p class="rv">I design memorable products through clarity, crafted aesthetics, and manufacturable beauty—where form, user logic, and engineering converge.</p>
+    <div class="scroll rv">Scroll to explore</div>
+  </div>
+</header>
+
+<div class="marquee">
+  <div class="mq-track">
+    <span>Defense</span><span>Networking</span><span>Electronics</span><span>Lifestyle</span><span>Industrial</span><span>Experimental</span>
+    <span>Defense</span><span>Networking</span><span>Electronics</span><span>Lifestyle</span><span>Industrial</span><span>Experimental</span>
+  </div>
+</div>
+
+<section id="work" class="wrap">
+  <div class="sec-head">
+    <div>
+      <div class="idx rv">01 — Selected Work</div>
+      <h2 class="rv">Works</h2>
+    </div>
+    <p class="rv">Cross-category design—turning complex requirements into clear, market-ready directions.</p>
+  </div>
+  <div class="idx-list" id="idxList">
+    <a class="idx-row rv" href="t-interceptormp.html" data-img="assets/images/home/select/t-interceptormp-1.jpg"><span class="num">01</span><span class="name">T. Interceptor MP</span><span class="cat">Defense</span></a>
+    <a class="idx-row rv" href="moai-router.html" data-img="assets/images/home/select/moai-router-1.jpg"><span class="num">02</span><span class="name">MoAI Router</span><span class="cat">Networking</span></a>
+    <a class="idx-row rv" href="ocean-series.html" data-img="assets/images/home/select/ocean-series-14.jpg"><span class="num">03</span><span class="name">Ocean Series</span><span class="cat">Networking</span></a>
+    <a class="idx-row rv" href="geometry-series.html" data-img="assets/images/home/select/geometry-series-20.jpg"><span class="num">04</span><span class="name">Geometry Series</span><span class="cat">Networking</span></a>
+    <a class="idx-row rv" href="wi-fi7-gaming-home-gateway.html" data-img="assets/images/home/select/wi-fi7-gaming-home-gateway-30.jpg"><span class="num">05</span><span class="name">Wi-Fi 7 Gaming Gateway</span><span class="cat">Networking</span></a>
+    <a class="idx-row rv" href="sagittarius-laptop.html" data-img="assets/images/home/select/sagittarius-laptop-17.jpg"><span class="num">06</span><span class="name">SAGITTARIUS Laptop</span><span class="cat">Electronics</span></a>
+    <a class="idx-row rv" href="interstellar05.html" data-img="assets/images/home/select/interstellar05-1.jpg"><span class="num">07</span><span class="name">Interstellar 05</span><span class="cat">Electronics</span></a>
+    <a class="idx-row rv" href="zenfone-9.html" data-img="assets/images/home/select/zenfone-9-12.jpg"><span class="num">08</span><span class="name">ASUS Zenfone 9</span><span class="cat">Electronics</span></a>
+    <a class="idx-row rv" href="nlg-mma200.html" data-img="assets/images/home/select/nlg-mma200-14.jpg"><span class="num">09</span><span class="name">NLG MMA200</span><span class="cat">Industrial</span></a>
+    <a class="idx-row rv" href="airgain-fwa-easy-installation-kit.html" data-img="assets/images/home/select/airgain-fwa-easy-installation-kit-1.jpg"><span class="num">10</span><span class="name">Airgain FWA Kit</span><span class="cat">Networking</span></a>
+  </div>
+</section>
+<div class="idx-preview" id="idxPreview"><img alt=""></div>
+
+<section class="wrap">
+  <div class="sec-head"><div><div class="idx rv">02 — By the numbers</div><h2 class="rv">Impact</h2></div></div>
+  <div class="stats">
+    <div class="stat rv"><div class="n"><span class="count" data-num="8">0</span><span class="u">+</span></div><div class="t">Products in mass production</div></div>
+    <div class="stat rv"><div class="n"><span class="count" data-num="15">0</span><span class="u">+</span></div><div class="t">Collaborations</div></div>
+    <div class="stat rv"><div class="n"><span class="count" data-num="30">0</span><span class="u">+</span></div><div class="t">Production-ready prototypes</div></div>
+    <div class="stat rv"><div class="n"><span class="count" data-num="8">0</span></div><div class="t">Design awards received</div></div>
+    <div class="stat rv"><div class="n"><span class="count" data-num="2">0</span><span class="u">+</span></div><div class="t">Family design languages</div></div>
+  </div>
+</section>
+
+<section id="approach" class="wrap">
+  <div class="sec-head"><div><div class="idx rv">03 — How I work</div><h2 class="rv">Approach</h2></div>
+  <p class="rv">A disciplined path from insight to buildable, refined execution.</p></div>
+  <div class="pillars">
+    <div class="pillar rv"><div class="p-n">Discovery</div><h3>Clarity Through Insight</h3><p>Designing from real behaviors—every choice serves a clear purpose.</p></div>
+    <div class="pillar rv"><div class="p-n">Iteration</div><h3>Rapid Validation</h3><p>Fast physical models drive learning, refinement, and stronger outcomes.</p></div>
+    <div class="pillar rv"><div class="p-n">Realization</div><h3>Buildable Execution</h3><p>Close cross-functional work ensures products ship with integrity.</p></div>
+    <div class="pillar rv"><div class="p-n">Refinement</div><h3>Aesthetic Discipline</h3><p>Relentless attention to proportion, tension, and surface quality.</p></div>
+  </div>
+</section>
+
+<section class="cta-sec wrap">
+  <h2 class="rv">Let's build<br>something <span class="o">real.</span></h2>
+  <a class="cta-mail rv" href="mailto:joe10912345@gmail.com">joe10912345@gmail.com<span class="ic">↗</span></a>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 Joel Chang · Industrial Designer</span>
+  <div class="fl">
+    <a href="index.html">Home V1</a>
+    <a href="https://www.linkedin.com/in/joel-chang" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.behance.net/joe10912345" target="_blank" rel="noopener">Behance</a>
+  </div>
+</footer>
+
+<script>
+/* 進場 reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%6*40)+'ms';io.observe(el)});
+
+/* 數字 count-up */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target,t=+el.dataset.num;let n=0;const step=()=>{n+=Math.ceil(t/28);if(n>=t){el.textContent=t}else{el.textContent=n;requestAnimationFrame(step)}};step();cio.unobserve(el)}}),{threshold:.6});
+document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+
+/* 游標光暈 */
+const glow=document.getElementById('glow');
+if(matchMedia('(pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  addEventListener('mousemove',e=>{glow.style.opacity=1;glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'},{passive:true});
+  addEventListener('mouseleave',()=>glow.style.opacity=0);
+}
+
+/* 作品清單懸停浮圖 */
+const prev=document.getElementById('idxPreview'),prevImg=prev.querySelector('img');
+document.querySelectorAll('.idx-row').forEach(row=>{
+  row.addEventListener('mouseenter',()=>{prevImg.src=row.dataset.img;prev.classList.add('on')});
+  row.addEventListener('mouseleave',()=>prev.classList.remove('on'));
+  row.addEventListener('mousemove',e=>{prev.style.left=e.clientX+'px';prev.style.top=e.clientY+'px'});
+});
+</script>
+</body>
+</html>
