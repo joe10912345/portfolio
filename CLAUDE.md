@@ -1,6 +1,9 @@
 # Joel Chang — Industrial Design Portfolio
 
-Context for continuing this project in Claude Code. **Read this first.**
+Context for continuing this project in Claude Code. **Read this file first, then read `工作日誌.md`**
+(the work log / hand-off doc) to get the latest state and the why behind recent changes. After any
+significant change, update `工作日誌.md` (newest entry on top) so the other computer can pick up cleanly.
+`工作日誌.md` is Drive-only — never published to GitHub.
 
 ## What this is
 A personal industrial-design portfolio for Joel Chang. Currently one self-contained `index.html`
@@ -40,7 +43,7 @@ Three places, each with one job:
 - **Live site:** GitHub `joe10912345/portfolio` → GitHub Pages.
 
 **Publish flow (when Joel says "幫我上線"):**
-1. `robocopy "G:\我的雲端硬碟\Web" "C:\Users\joe10\Desktop\Web" /E /XD ".git" ".claude" "content" "文案" /XF "desktop.ini" "Thumbs.db" "DO_NOT_EDIT_HERE.txt"` — sync Drive → bridge.
+1. `robocopy "G:\我的雲端硬碟\Web" "C:\Users\joe10\Desktop\Web" /E /XD ".git" ".claude" "content" "文案" /XF "desktop.ini" "Thumbs.db" "DO_NOT_EDIT_HERE.txt" "工作日誌.md"` — sync Drive → bridge.
    ⚠️ Use `/E` (copy, non-destructive), NOT `/MIR`. Google Drive streams files on demand, so a file that
    hasn't downloaded locally looks "absent" to robocopy; `/MIR`'s purge then DELETES the good bridge copy
    (this happened 2026-07-08, deleting 3 about-page images — recovered from git). `/E` never deletes.
@@ -49,8 +52,8 @@ Three places, each with one job:
 3. Pages rebuilds in ~1–2 min.
 
 **GitHub holds the storefront only:** all `*.html` + `assets/` + the `*.md` docs. The workshop
-files `content/` and `文案/` are **Drive-only** (git-ignored + excluded from the publish sync) — they
-never go to GitHub. Edit copy in Drive `文案/`, then sync into the HTML (still requires a sync pass).
+files `content/`, `文案/`, and `工作日誌.md` are **Drive-only** (git-ignored + excluded from the publish
+sync) — they never go to GitHub. Edit copy in Drive `文案/`, then sync into the HTML (still requires a sync pass).
 
 ## Owner / working style
 - Joel is a designer, not a developer. He designs layouts in **Figma** and wants to deploy via **GitHub**.
